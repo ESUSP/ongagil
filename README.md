@@ -5,10 +5,10 @@
 [![Coverage Status][CS img]][Coverage Status]
 
 ## Descrição  
-Sistema de apoio no gerenciamento de organizações não governamentais (ONGs)
+Sistema de apoio no gerenciamento de organizações não governamentais (ONGs).
 
 ## Links
-App on Heroku: https://ongagil.herokuapp.com/  
+App no Heroku: https://ongagil.herokuapp.com/  
 Project Tracker: https://www.pivotaltracker.com/n/projects/1859063
 
 ## Membros

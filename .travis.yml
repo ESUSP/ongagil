@@ -11,4 +11,4 @@ addons:
 
 before_script:
   - cp config/database.yml.travis config/database.yml
-- psql -c 'create database ongagiltest;' -U postgres
+  - psql -c 'create database ongagiltest;' -U postgres
