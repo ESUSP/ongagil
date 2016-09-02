@@ -18,12 +18,12 @@ Mayra Satiko Hosokawa
 Rafael Felipe Sandroni Dias  
 Ricardo Takazu Hatae  
 
-[Build Status]: https://travis-ci.org/jeanadam/ongagil
-[travis pull requests]: https://travis-ci.org/jeanadam/ongagil/pull_requests
-[Code Climate]: https://codeclimate.com/github/jeanadam/ongagil
-[Coverage Status]: https://coveralls.io/github/jeanadam/ongagil?branch=master
+[Build Status]: https://travis-ci.org/ESUSP/ongagil
+[travis pull requests]: https://travis-ci.org/ESUSP/ongagil/pull_requests
+[Code Climate]: https://codeclimate.com/github/ESUSP/ongagil
+[Coverage Status]: https://coveralls.io/github/ESUSP/ongagil?branch=master
 
 [GV img]: https://badge.fury.io/rb/ongagil.png
-[BS img]: https://travis-ci.org/jeanadam/ongagil.png
-[CC img]: https://codeclimate.com/github/jeanadam/ongagil.png
-[CS img]: https://coveralls.io/repos/jeanadam/ongagil/badge.png?branch=master
+[BS img]: https://travis-ci.org/ESUSP/ongagil.png
+[CC img]: https://codeclimate.com/github/ESUSP/ongagil.png
+[CS img]: https://coveralls.io/repos/ESUSP/ongagil/badge.png?branch=master
