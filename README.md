@@ -2,7 +2,6 @@
 
 [![Build Status][BS img]][Build Status]
 [![Code Climate][CC img]][Code Climate]
-[![Coverage Status][CS img]][Coverage Status]
 
 ## Descrição  
 Sistema de apoio no gerenciamento de organizações não governamentais (ONGs).
