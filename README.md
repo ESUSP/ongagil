@@ -8,7 +8,7 @@ Sistema de apoio no gerenciamento de organizações não governamentais (ONGs).
 
 ## Links
 App no Heroku: https://ongagil.herokuapp.com/  
-Project Tracker: https://www.pivotaltracker.com/n/projects/1859063
+Project Tracker: https://www.pivotaltracker.com/n/projects/1860245
 
 ## Membros
 David Silva Martins de Andrade  
