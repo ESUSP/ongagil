@@ -1,5 +1,5 @@
-<%= form_for(beneficiary) do |f| %>
-  <% if beneficiary.errors.any? %>
+<%= form_for(@beneficiary) do |f| %>
+  <% if @beneficiary.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(beneficiary.errors.count, "error") %> prohibited this beneficiary from being saved:</h2>
 

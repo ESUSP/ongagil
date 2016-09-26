@@ -1,66 +1,196 @@
 <!-- Page Content -->
-    <div class="container">
+<div class="container">
 
-        <!-- Page Heading -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">
-                    <small></small>
-                </h1>
-            </div>
+  <!-- Page Heading -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">
+        <small></small>
+      </h1>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <p id="notice">
+    <%= notice %>
+  </p>
+
+  <h1>Beneficiários</h1>
+
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table id="mytable" class="table table-bordred table-striped">
+
+            <thead>
+              <thead>
+                <tr>
+                  <th>Projeto:</th>
+                  <th>Nome:</th>
+                  <th>Data de nascimento:</th>
+                  <th>Estado civil:</th>
+                  <th>Rg:</th>
+                  <th>Cpf:</th>
+                  <th>Telefone:</th>
+                  <th>Endereço:</th>
+                  <th>Bairro:</th>
+                  <th>Estado:</th>
+                  <th>País:</th>
+                  <th>Cep:</th>
+                  <th>Menor:</th>
+                  <th>Responsável:</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @beneficiaries.each do |beneficiary| %>
+                  <tr>
+                    <td>
+                      <%= beneficiary.projeto %>
+                    </td>
+                    <td>
+                      <%= beneficiary.nome %>
+                    </td>
+                    <td>
+                      <%= beneficiary.dataNasc %>
+                    </td>
+                    <td>
+                      <%= beneficiary.estadoCivil %>
+                    </td>
+                    <td>
+                      <%= beneficiary.rg %>
+                    </td>
+                    <td>
+                      <%= beneficiary.cpf %>
+                    </td>
+                    <td>
+                      <%= beneficiary.telefone %>
+                    </td>
+                    <td>
+                      <%= beneficiary.endereco %>
+                    </td>
+                    <td>
+                      <%= beneficiary.bairro %>
+                    </td>
+                    <td>
+                      <%= beneficiary.estado %>
+                    </td>
+                    <td>
+                      <%= beneficiary.pais %>
+                    </td>
+                    <td>
+                      <%= beneficiary.cep %>
+                    </td>
+                    <td>
+                      <%= beneficiary.menor %>
+                    </td>
+                    <td>
+                      <%= beneficiary.responsavel %>
+                    </td>
+                    <td>
+                      <%= link_to 'Visualizar', beneficiary %>
+                                          </td>
+                    </p>
+                    <td>
+                      <%= link_to 'Editar', edit_beneficiary_path(beneficiary) %>
+
+                    </td>
+                    </p>
+                    <td>
+                      <%= link_to 'Deletar', beneficiary, method: :delete, data: { confirm: 'Você deseja realmente deletar?' } %>
+                    </td>
+                  </tr>
+                  <% end %>
+              </tbody>
+          </table>
+
+          </table>
+
         </div>
-        <!-- /.row -->
 
-<p id="notice"><%= notice %></p>
+      </div>
+    </div>
+  </div>
 
-<h1>Beneficiários</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Projeto:</th>
-      <th>Nome:</th>
-      <th>Data de nascimento:</th>
-      <th>Estado civil:</th>
-      <th>Rg:</th>
-      <th>Cpf:</th>
-      <th>Telefone:</th>
-      <th>Endereço:</th>
-      <th>Bairro:</th>
-      <th>Estado:</th>
-      <th>País:</th>
-      <th>Cep:</th>
-      <th>Menor:</th>
-      <th>Responsável:</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+          </div>
+          <div class="form-group">
+          </div>
+          <div class="form-group">
 
-  <tbody>
-    <% @beneficiaries.each do |beneficiary| %>
-      <tr>
-        <td><%= beneficiary.projeto %></td>
-        <td><%= beneficiary.nome %></td>
-        <td><%= beneficiary.dataNasc %></td>
-        <td><%= beneficiary.estadoCivil %></td>
-        <td><%= beneficiary.rg %></td>
-        <td><%= beneficiary.cpf %></td>
-        <td><%= beneficiary.telefone %></td>
-        <td><%= beneficiary.endereco %></td>
-        <td><%= beneficiary.bairro %></td>
-        <td><%= beneficiary.estado %></td>
-        <td><%= beneficiary.pais %></td>
-        <td><%= beneficiary.cep %></td>
-        <td><%= beneficiary.menor %></td>
-        <td><%= beneficiary.responsavel %></td>
-        <td><%= link_to 'Show', beneficiary %></td></p>
-        <td><%= link_to 'Edit', edit_beneficiary_path(beneficiary) %></td></p>
-        <td><%= link_to 'Destroy', beneficiary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Beneficiary', new_beneficiary_path %>
+          </div>
+        </div>
+        <div class="modal-footer ">
+          <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Atualizar</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+
+
+  <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+
+        </div>
+        <div class="modal-body">
+
+          <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Você realmente deseja deletar esse registro?</div>
+
+        </div>
+        <div class="modal-footer ">
+
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+  <div class="clearfix"></div>
+  <ul class="pagination pull-right">
+    <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+  </ul>
+
+  <br>
+
+  <%= button_to "Novo", new_beneficiary_path, :class => "button", :method => :get  %>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
