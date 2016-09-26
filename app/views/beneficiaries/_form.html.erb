@@ -1,0 +1,87 @@
+<%= form_for(beneficiary) do |f| %>
+  <% if beneficiary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(beneficiary.errors.count, "error") %> prohibited this beneficiary from being saved:</h2>
+
+      <ul>
+      <% beneficiary.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :projeto %>
+    <%= f.text_field :projeto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dataNasc %>
+    <%= f.date_select :dataNasc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :estadoCivil %>
+    <%= f.text_field :estadoCivil %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rg %>
+    <%= f.text_field :rg %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cpf %>
+    <%= f.text_field :cpf %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefone %>
+    <%= f.text_field :telefone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :endereco %>
+    <%= f.text_field :endereco %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bairro %>
+    <%= f.text_field :bairro %>
+  </div>
+
+  <div class="field">
+    <%= f.label :estado %>
+    <%= f.text_field :estado %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pais %>
+    <%= f.text_field :pais %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cep %>
+    <%= f.text_field :cep %>
+  </div>
+
+  <div class="field">
+    <%= f.label :menor %>
+    <%= f.check_box :menor, checked: "checked" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :responsavel %>
+    <%= f.text_field :responsavel %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

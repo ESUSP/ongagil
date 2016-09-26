@@ -1,0 +1,66 @@
+<!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    <small></small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+<p id="notice"><%= notice %></p>
+
+<h1>Beneficiários</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Projeto:</th>
+      <th>Nome:</th>
+      <th>Data de nascimento:</th>
+      <th>Estado civil:</th>
+      <th>Rg:</th>
+      <th>Cpf:</th>
+      <th>Telefone:</th>
+      <th>Endereço:</th>
+      <th>Bairro:</th>
+      <th>Estado:</th>
+      <th>País:</th>
+      <th>Cep:</th>
+      <th>Menor:</th>
+      <th>Responsável:</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @beneficiaries.each do |beneficiary| %>
+      <tr>
+        <td><%= beneficiary.projeto %></td>
+        <td><%= beneficiary.nome %></td>
+        <td><%= beneficiary.dataNasc %></td>
+        <td><%= beneficiary.estadoCivil %></td>
+        <td><%= beneficiary.rg %></td>
+        <td><%= beneficiary.cpf %></td>
+        <td><%= beneficiary.telefone %></td>
+        <td><%= beneficiary.endereco %></td>
+        <td><%= beneficiary.bairro %></td>
+        <td><%= beneficiary.estado %></td>
+        <td><%= beneficiary.pais %></td>
+        <td><%= beneficiary.cep %></td>
+        <td><%= beneficiary.menor %></td>
+        <td><%= beneficiary.responsavel %></td>
+        <td><%= link_to 'Show', beneficiary %></td></p>
+        <td><%= link_to 'Edit', edit_beneficiary_path(beneficiary) %></td></p>
+        <td><%= link_to 'Destroy', beneficiary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Beneficiary', new_beneficiary_path %>
