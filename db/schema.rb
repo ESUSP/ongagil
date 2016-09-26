@@ -10,9 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160926043052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "beneficiaries", force: :cascade do |t|
+    t.string   "projeto"
+    t.string   "nome"
+    t.date     "dataNasc"
+    t.string   "estadoCivil"
+    t.string   "rg"
+    t.string   "cpf"
+    t.string   "telefone"
+    t.string   "endereco"
+    t.string   "bairro"
+    t.string   "estado"
+    t.string   "pais"
+    t.string   "cep"
+    t.boolean  "menor"
+    t.string   "responsavel"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "beneficiarios", force: :cascade do |t|
+    t.string   "nome"
+    t.string   "telefone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
