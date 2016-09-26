@@ -1,0 +1,47 @@
+<%= form_for(doador) do |f| %>
+  <% if doador.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(doador.errors.count, "error") %> prohibited this doador from being saved:</h2>
+
+      <ul>
+      <% doador.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :endereco %>
+    <%= f.text_area :endereco %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefone %>
+    <%= f.number_field :telefone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :frequencia %>
+    <%= f.text_field :frequencia %>
+  </div>
+
+  <div class="field">
+    <%= f.label :forma %>
+    <%= f.text_field :forma %>
+  </div>
+
+  <div class="field">
+    <%= f.label :data %>
+    <%= f.date_select :data %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

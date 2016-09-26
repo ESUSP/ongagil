@@ -1,0 +1,2 @@
+class Doador < ApplicationRecord
+end
