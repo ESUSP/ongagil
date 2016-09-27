@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_for(@beneficiary) do |f| %>
   <% if @beneficiary.errors.any? %>
     <div id="error_explanation">
@@ -11,77 +12,113 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :projeto %>
-    <%= f.text_field :projeto %>
+<form class="user-form form-horizontal" role="form">
+  <div class="field form-group">
+      <%= f.label :projeto, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+      <%= f.text_field :projeto, :size => 20, :class => 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_field :nome %>
+  <div class="field form-group">
+    <%= f.label :nome, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.text_field :nome, :size => 80, :class => 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :dataNasc %>
-    <%= f.date_select :dataNasc %>
+  <div class="field form-group">
+    <%= f.label :dataNasc, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.date_field :dataNasc, :size => 40, :class => 'form-control'  %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :estadoCivil %>
-    <%= f.text_field :estadoCivil %>
+  <div class="field form-group">
+    <%= f.label :estadoCivil, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.text_field :estadoCivil, :size => 40, :class => 'form-control'  %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :rg %>
-    <%= f.text_field :rg %>
+  <div class="field form-group">
+    <%= f.label :rg, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.text_field :rg, :size => 40, :class => 'form-control'  %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :cpf %>
-    <%= f.text_field :cpf %>
+  <div class="field form-group">
+    <%= f.label :cpf, :class => 'control-label col-sm-3'  %>
+    <div class="col-sm-9">
+    <%= f.text_field :cpf, :size => 40, :class => 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :telefone %>
-    <%= f.text_field :telefone %>
+  <div class="field form-group">
+    <%= f.label :telefone, :class => 'control-label col-sm-3'  %>
+    <div class="col-sm-9">
+    <%= f.text_field :telefone, :size => 40, :class => 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :endereco %>
-    <%= f.text_field :endereco %>
+  <div class="field form-group">
+    <%= f.label :endereco, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.text_field :endereco, :size => 80, :class => 'form-control'   %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :bairro %>
-    <%= f.text_field :bairro %>
+  <div class="field form-group">
+    <%= f.label :bairro, :class => 'control-label col-sm-3'  %>
+    <div class="col-sm-9">
+    <%= f.text_field :bairro, :size => 40, :class => 'form-control'   %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :estado %>
-    <%= f.text_field :estado %>
+  <div class="field form-group">
+    <%= f.label :estado, :class => 'control-label col-sm-3'  %>
+    <div class="col-sm-9">
+    <%= f.text_field :estado, :size => 10, :class => 'form-control'   %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :pais %>
-    <%= f.text_field :pais %>
+  <div class="field form-group">
+    <%= f.label :pais, :class => 'control-label col-sm-3'  %>
+    <div class="col-sm-9">
+    <%= f.text_field :pais, :size => 40, :class => 'form-control'   %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :cep %>
-    <%= f.text_field :cep %>
+  <div class="field form-group">
+    <%= f.label :cep, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.text_field :cep, :size => 40, :class => 'form-control'  %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :menor %>
-    <%= f.check_box :menor, checked: "checked" %>
+  <div class="field form-group">
+    <%= f.label :menor, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.check_box :menor, checked: "checked", :class => 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :responsavel %>
-    <%= f.text_field :responsavel %>
+  <div class="field form-group">
+    <%= f.label :responsavel, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.text_field :responsavel, :size => 80, :class => 'form-control'  %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+</form>
+  <div class="row form-actions">
+    <div class="col-sm-12">
+    <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
+    </div>
   </div>
 <% end %>
+</div>
+
+<br>
+<br>

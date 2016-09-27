@@ -1,196 +1,93 @@
-<!-- Page Content -->
-<div class="container">
+<%- model_class = Beneficiary -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:projeto) %></th>
+      <th><%= model_class.human_attribute_name(:nome) %></th>
+      <th><%= model_class.human_attribute_name(:dataNasc) %></th>
+      <th><%= model_class.human_attribute_name(:estadoCivil) %></th>
+      <th><%= model_class.human_attribute_name(:rg) %></th>
+      <th><%= model_class.human_attribute_name(:cpf) %></th>
+      <th><%= model_class.human_attribute_name(:telefone) %></th>
+      <th><%= model_class.human_attribute_name(:endereco) %></th>
+      <th><%= model_class.human_attribute_name(:bairro) %></th>
+      <th><%= model_class.human_attribute_name(:estado) %></th>
+      <th><%= model_class.human_attribute_name(:pais) %></th>
+      <th><%= model_class.human_attribute_name(:cep) %></th>
+      <th><%= model_class.human_attribute_name(:menor) %></th>
+      <th><%= model_class.human_attribute_name(:responsavel) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @beneficiaries.each do |beneficiary| %>
+      <tr>
+        <td><%= link_to beneficiary.id, beneficiary_path(beneficiary) %></td>
+        <td><%= beneficiary.projeto %></td>
+        <td><%= beneficiary.nome %></td>
+        <td><%= beneficiary.dataNasc %></td>
+        <td><%= beneficiary.estadoCivil %></td>
+        <td><%= beneficiary.rg %></td>
+        <td><%= beneficiary.cpf %></td>
+        <td><%= beneficiary.telefone %></td>
+        <td><%= beneficiary.endereco %></td>
+        <td><%= beneficiary.bairro %></td>
+        <td><%= beneficiary.estado %></td>
+        <td><%= beneficiary.pais %></td>
+        <td><%= beneficiary.cep %></td>
+        <td><%= beneficiary.menor %></td>
+        <td><%= beneficiary.responsavel %></td>
+        <td><%=l beneficiary.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_beneficiary_path(beneficiary), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      beneficiary_path(beneficiary),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-  <!-- Page Heading -->
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">
-        <small></small>
-      </h1>
-    </div>
-  </div>
-  <!-- /.row -->
-
-  <p id="notice">
-    <%= notice %>
-  </p>
-
-  <h1>Beneficiários</h1>
-
-
-
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-
-  <div class="container">
-    <div class="row">
-
-
-      <div class="col-md-12">
-        <div class="table-responsive">
-          <table id="mytable" class="table table-bordred table-striped">
-
-            <thead>
-              <thead>
-                <tr>
-                  <th>Projeto:</th>
-                  <th>Nome:</th>
-                  <th>Data de nascimento:</th>
-                  <th>Estado civil:</th>
-                  <th>Rg:</th>
-                  <th>Cpf:</th>
-                  <th>Telefone:</th>
-                  <th>Endereço:</th>
-                  <th>Bairro:</th>
-                  <th>Estado:</th>
-                  <th>País:</th>
-                  <th>Cep:</th>
-                  <th>Menor:</th>
-                  <th>Responsável:</th>
-                  <th colspan="3"></th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <% @beneficiaries.each do |beneficiary| %>
-                  <tr>
-                    <td>
-                      <%= beneficiary.projeto %>
-                    </td>
-                    <td>
-                      <%= beneficiary.nome %>
-                    </td>
-                    <td>
-                      <%= beneficiary.dataNasc %>
-                    </td>
-                    <td>
-                      <%= beneficiary.estadoCivil %>
-                    </td>
-                    <td>
-                      <%= beneficiary.rg %>
-                    </td>
-                    <td>
-                      <%= beneficiary.cpf %>
-                    </td>
-                    <td>
-                      <%= beneficiary.telefone %>
-                    </td>
-                    <td>
-                      <%= beneficiary.endereco %>
-                    </td>
-                    <td>
-                      <%= beneficiary.bairro %>
-                    </td>
-                    <td>
-                      <%= beneficiary.estado %>
-                    </td>
-                    <td>
-                      <%= beneficiary.pais %>
-                    </td>
-                    <td>
-                      <%= beneficiary.cep %>
-                    </td>
-                    <td>
-                      <%= beneficiary.menor %>
-                    </td>
-                    <td>
-                      <%= beneficiary.responsavel %>
-                    </td>
-                    <td>
-                      <%= link_to 'Visualizar', beneficiary %>
-                                          </td>
-                    </p>
-                    <td>
-                      <%= link_to 'Editar', edit_beneficiary_path(beneficiary) %>
-
-                    </td>
-                    </p>
-                    <td>
-                      <%= link_to 'Deletar', beneficiary, method: :delete, data: { confirm: 'Você deseja realmente deletar?' } %>
-                    </td>
-                  </tr>
-                  <% end %>
-              </tbody>
-          </table>
-
-          </table>
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-
-  <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-        </div>
-        <div class="modal-body">
-          <div class="form-group">
-          </div>
-          <div class="form-group">
-          </div>
-          <div class="form-group">
-
-
-
-          </div>
-        </div>
-        <div class="modal-footer ">
-          <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Atualizar</button>
-        </div>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
-
-
-
-  <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-
-        </div>
-        <div class="modal-body">
-
-          <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Você realmente deseja deletar esse registro?</div>
-
-        </div>
-        <div class="modal-footer ">
-
-        </div>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
-
-  <div class="clearfix"></div>
-  <ul class="pagination pull-right">
-    <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-    <li class="active"><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-  </ul>
-
-  <br>
-
-  <%= button_to "Novo", new_beneficiary_path, :class => "button", :method => :get  %>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_beneficiary_path,
+            :class => 'btn btn-primary' %>
+            
+            
+            
+            
+            
+            <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
