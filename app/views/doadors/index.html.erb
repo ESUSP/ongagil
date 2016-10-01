@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Doadors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Endereco</th>
+      <th>Telefone</th>
+      <th>Frequencia</th>
+      <th>Forma</th>
+      <th>Data</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doadors.each do |doador| %>
+      <tr>
+        <td><%= doador.nome %></td>
+        <td><%= doador.endereco %></td>
+        <td><%= doador.telefone %></td>
+        <td><%= doador.frequencia %></td>
+        <td><%= doador.forma %></td>
+        <td><%= doador.data %></td>
+        <td><%= link_to 'Show', doador %></td>
+        <td><%= link_to 'Edit', edit_doador_path(doador) %></td>
+        <td><%= link_to 'Destroy', doador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doador', new_doador_path %>

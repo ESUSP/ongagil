@@ -15,6 +15,36 @@ ActiveRecord::Schema.define(version: 20160930150213) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "beneficiaries", force: :cascade do |t|
+    t.string   "projeto"
+    t.string   "nome"
+    t.date     "dataNasc"
+    t.string   "estadoCivil"
+    t.string   "rg"
+    t.string   "cpf"
+    t.string   "telefone"
+    t.string   "endereco"
+    t.string   "bairro"
+    t.string   "estado"
+    t.string   "pais"
+    t.string   "cep"
+    t.boolean  "menor"
+    t.string   "responsavel"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "doadors", force: :cascade do |t|
+    t.string   "nome"
+    t.text     "endereco"
+    t.integer  "telefone"
+    t.string   "frequencia"
+    t.string   "forma"
+    t.date     "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "usuarios", force: :cascade do |t|
     t.string   "email",      limit: 254
     t.string   "nome",       limit: 254

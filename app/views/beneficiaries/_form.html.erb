@@ -1,0 +1,124 @@
+<div class="container">
+<%= form_for(@beneficiary) do |f| %>
+  <% if @beneficiary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(beneficiary.errors.count, "error") %> prohibited this beneficiary from being saved:</h2>
+
+      <ul>
+      <% beneficiary.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<form class="user-form form-horizontal" role="form">
+  <div class="field form-group">
+      <%= f.label :projeto, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+      <%= f.text_field :projeto, :size => 20, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :nome, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.text_field :nome, :size => 80, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :dataNasc, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.date_field :dataNasc, :size => 40, :class => 'form-control'  %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :estadoCivil, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.text_field :estadoCivil, :size => 40, :class => 'form-control'  %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :rg, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.text_field :rg, :size => 40, :class => 'form-control'  %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :cpf, :class => 'control-label col-sm-3'  %>
+    <div class="col-sm-9">
+    <%= f.text_field :cpf, :size => 40, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :telefone, :class => 'control-label col-sm-3'  %>
+    <div class="col-sm-9">
+    <%= f.text_field :telefone, :size => 40, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :endereco, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.text_field :endereco, :size => 80, :class => 'form-control'   %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :bairro, :class => 'control-label col-sm-3'  %>
+    <div class="col-sm-9">
+    <%= f.text_field :bairro, :size => 40, :class => 'form-control'   %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :estado, :class => 'control-label col-sm-3'  %>
+    <div class="col-sm-9">
+    <%= f.text_field :estado, :size => 10, :class => 'form-control'   %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :pais, :class => 'control-label col-sm-3'  %>
+    <div class="col-sm-9">
+    <%= f.text_field :pais, :size => 40, :class => 'form-control'   %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :cep, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.text_field :cep, :size => 40, :class => 'form-control'  %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :menor, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.check_box :menor, checked: "checked", :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :responsavel, :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.text_field :responsavel, :size => 80, :class => 'form-control'  %>
+    </div>
+  </div>
+
+</form>
+  <div class="row form-actions">
+    <div class="col-sm-12">
+    <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
+</div>
+
+<br>
+<br>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @doador.nome %>
+</p>
+
+<p>
+  <strong>Endereco:</strong>
+  <%= @doador.endereco %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @doador.telefone %>
+</p>
+
+<p>
+  <strong>Frequencia:</strong>
+  <%= @doador.frequencia %>
+</p>
+
+<p>
+  <strong>Forma:</strong>
+  <%= @doador.forma %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @doador.data %>
+</p>
+
+<%= link_to 'Edit', edit_doador_path(@doador) %> |
+<%= link_to 'Back', doadors_path %>
