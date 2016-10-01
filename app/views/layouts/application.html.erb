@@ -3,12 +3,16 @@
   <head>
     <title>ONG Ágil</title>
     <%= csrf_meta_tags %>
-
+	  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/<%= fontawesome_version %>/css/font-awesome.min.css" rel="stylesheet">
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+    <script src="https://code.jquery.com/ui/<%= jqueryui_version %>/jquery-ui.min.js"></script>
+  </head>
   <body>
     <%= yield %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/js/bootstrap.min.js"></script>
   </body>
 </html>
