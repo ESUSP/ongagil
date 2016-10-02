@@ -10,6 +10,7 @@ class BeneficiariesController < ApplicationController
   # GET /beneficiaries/1
   # GET /beneficiaries/1.json
   def show
+   
   end
 
   # GET /beneficiaries/new
@@ -24,16 +25,15 @@ class BeneficiariesController < ApplicationController
   # POST /beneficiaries
   # POST /beneficiaries.json
   def create
-    @beneficiary = Beneficiary.new(beneficiary_params)
-
-    respond_to do |format|
-      if @beneficiary.save
-        format.html { redirect_to @beneficiary, notice: 'Beneficiary was successfully created.' }
-        format.json { render :show, status: :created, location: @beneficiary }
-      else
+    @beneficiary = Beneficiary.new(beneficiary_params)   
+    respond_to do |format|   
+        if @beneficiary.save
+            format.html { redirect_to @beneficiary, notice: 'Beneficiary was successfully created.' }
+            format.json { render :show, status: :created, location: @beneficiary }
+        else
         format.html { render :new }
         format.json { render json: @beneficiary.errors, status: :unprocessable_entity }
-      end
+        end
     end
   end
 

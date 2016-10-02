@@ -44,21 +44,21 @@
   <div class="field form-group">
     <%= f.label :rg, :class => 'control-label col-sm-3' %>
     <div class="col-sm-9">
-    <%= f.text_field :rg, :size => 40, :class => 'form-control'  %>
+    <%= f.text_field :rg, :size => 40, :class => 'form-control', placeholder: 'XX.XXX.XXX-X', :data=> {:mask=> '99.999.999-9'}  %>
     </div>
   </div>
 
   <div class="field form-group">
     <%= f.label :cpf, :class => 'control-label col-sm-3'  %>
     <div class="col-sm-9">
-    <%= f.text_field :cpf, :size => 40, :class => 'form-control' %>
+    <%= f.text_field :cpf, :size => 40, :class => 'form-control', placeholder: 'XXX.XXX.XXX.XXX', :data=> {:mask=> '999.999.999.9999'}%>
     </div>
   </div>
 
   <div class="field form-group">
     <%= f.label :telefone, :class => 'control-label col-sm-3'  %>
     <div class="col-sm-9">
-    <%= f.text_field :telefone, :size => 40, :class => 'form-control' %>
+    <%= f.text_field :telefone, :size => 40, :class => 'form-control', placeholder: 'XX XXXX-XXXX', :data=> {:mask=> '99 9999-9999'} %>
     </div>
   </div>
 
@@ -93,7 +93,7 @@
   <div class="field form-group">
     <%= f.label :cep, :class => 'control-label col-sm-3' %>
     <div class="col-sm-9">
-    <%= f.text_field :cep, :size => 40, :class => 'form-control'  %>
+    <%= f.text_field :cep, :size => 40, :class => 'form-control', placeholder: 'XXXXX-XXX', :data=> {:mask=> '999-99-999'}  %>
     </div>
   </div>
 
@@ -111,14 +111,15 @@
     </div>
   </div>
 
+<%= hidden_field_tag 'step_commit', '' %>
+  <span style="float:left;">
+    <br>
+    <br>
+    <%=submit_tag 'Cancelar', :name=>'cancel', :onclick=>"javascript:location.href='/';return false;" %>
+    <%=submit_tag 'Salvar', :name=>'exit', :onclick=>"javascript:$('step_commit').value='exit';"  %>
+  </span>
 </form>
-  <div class="row form-actions">
-    <div class="col-sm-12">
-    <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
 </div>
-
 <br>
 <br>
