@@ -13,12 +13,6 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap";
- @import "bootstrap-sprockets";
- 
- body {
-  margin-top: 50px;
- }
  
  
  .container-fluid {
