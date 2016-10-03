@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
-<<<<<<< HEAD
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" crossorigin="anonymous" />
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
             <link rel="stylesheet" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
@@ -21,7 +20,6 @@
 
 
     <!-- Navigation -->
-=======
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/<%= fontawesome_version %>/css/font-awesome.min.css" rel="stylesheet">
    
@@ -38,7 +36,6 @@
 <body>
 
 <!-- Navigation -->
->>>>>>> b744851489fe8ddba5c84b6537bbfd91a410fbef
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -57,7 +54,6 @@
                 <ul class="nav navbar-nav">
 
                     <li>
-<<<<<<< HEAD
                         <a href="#">Projetos</a>
                     </li>
                     <li>
@@ -67,7 +63,9 @@
                         <a href="#">Doações</a>
                     </li>
                     <li>
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Beneficiarios <b class="caret"></b></a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Beneficiarios 
+                            <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/beneficiaries">Manter beneficiários</a></li>
                                 <li><a href="/beneficiaries">Solicitar participação</a></li>
@@ -82,29 +80,6 @@
                         <li>
                             <a href="#">Chat Box</a>
                         </li>
-=======
-    <a href="#">Projetos</a>
-                    </li>
-                    <li>
-    <a href="#">Atividades</a>
-                    </li>
-                    <li>
-    <a href="#">Doações</a>
-                    </li>
-                    <li>
-                        <a href="/beneficiaries">Beneficiários</a>
-                    </li>
-                    <li>
-                         <a href="#">Doadores</a>
-                    </li>
-                    <li>
-                        <a href="/usuarios">Usuários</a>
-                    </li>
-                    <li>
-                        <a href="#">Chat Box</a>
-                    </li>
->>>>>>> b744851489fe8ddba5c84b6537bbfd91a410fbef
-
                 </ul>
             </div>
         </div>
@@ -113,7 +88,6 @@
 
 <div class="container">
     <%= yield %>
-<<<<<<< HEAD
 </div>
 
 
@@ -181,9 +155,7 @@
             <!-- /scripts -->
 </body>
 
-=======
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/js/bootstrap.min.js"></script>
   </body>
->>>>>>> b744851489fe8ddba5c84b6537bbfd91a410fbef
 </html>

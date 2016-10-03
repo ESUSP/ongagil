@@ -14,12 +14,14 @@
             <%= model_class.human_attribute_name(:id) %>
           </th>
           <th>
-            <%= model_class.human_attribute_name(:projeto) %>
+            Projeto
           </th>
           <th>
-            <%= model_class.human_attribute_name(:nome) %>
+            Nome
           </th>
-          
+          <th>
+            Estado civil
+          </th>
           <th>
             RG
           </th>
@@ -27,9 +29,8 @@
             CPF
           </th>
           <th>
-            <%= model_class.human_attribute_name(:telefone) %>
+            Telefone
           </th>
-          
           <th>
             Menor
           </th>
@@ -54,7 +55,9 @@
             <td>
               <%= beneficiary.nome %>
             </td>
-            
+            <td>
+              <%= beneficiary.estadoCivil %>
+            </td>
             
             <td>
               <%= beneficiary.rg %>
@@ -72,7 +75,7 @@
             <td>
               <%= beneficiary.responsavel %>
             </td>
-            
+
             <td>
               <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_beneficiary_path(beneficiary), :class => 'btn btn-default btn-xs' %>
