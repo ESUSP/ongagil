@@ -1,107 +1,115 @@
-<script src ="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-<link rel ="stylesheet" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
-<script>
-$(document).ready(function(){
-    $('#tblbeneficiaries').DataTable({      
-      "language": {
-            "lengthMenu": "Mostrando _MENU_ registros por página",
-            "zeroRecords": "Não há registros encontrados",
-            "info": "Mostrando página _PAGE_ de _PAGES_",
-            "infoEmpty": "Não há informações",
-            "infoFiltered": "(filtrando de _MAX_ registros)"
-          
-        }
-        
-     
-    });
-});
-</script>
-
 <%- model_class = Beneficiary -%>
 
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<br>
-<div class="container-fluid">
-<table id="tblbeneficiaries" class="table table-bor table-striped table-hover" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:projeto) %></th>
-      <th><%= model_class.human_attribute_name(:nome) %></th>
-      <th><%= model_class.human_attribute_name(:dataNasc) %></th>
-      <th><%= model_class.human_attribute_name(:estadoCivil) %></th>
-      <th><%= model_class.human_attribute_name(:rg) %></th>
-      <th><%= model_class.human_attribute_name(:cpf) %></th>
-      <th><%= model_class.human_attribute_name(:telefone) %></th>
-      <th><%= model_class.human_attribute_name(:endereco) %></th>
-      <th><%= model_class.human_attribute_name(:bairro) %></th>
-      <th><%= model_class.human_attribute_name(:estado) %></th>
-      <th><%= model_class.human_attribute_name(:pais) %></th>
-      <th><%= model_class.human_attribute_name(:cep) %></th>
-      <th><%= model_class.human_attribute_name(:menor) %></th>
-      <th><%= model_class.human_attribute_name(:responsavel) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @beneficiaries.each do |beneficiary| %>
-      <tr>
-        <td><%= link_to beneficiary.id, beneficiary_path(beneficiary) %></td>
-        <td><%= beneficiary.projeto %></td>
-        <td><%= beneficiary.nome %></td>
-        <td><%= beneficiary.dataNasc %></td>
-        <td><%= beneficiary.estadoCivil %></td>
-        <td><%= beneficiary.rg %></td>
-        <td><%= beneficiary.cpf %></td>
-        <td><%= beneficiary.telefone %></td>
-        <td><%= beneficiary.endereco %></td>
-        <td><%= beneficiary.bairro %></td>
-        <td><%= beneficiary.estado %></td>
-        <td><%= beneficiary.pais %></td>
-        <td><%= beneficiary.cep %></td>
-        <td><%= beneficiary.menor %></td>
-        <td><%= beneficiary.responsavel %></td>
-        <td><%=l beneficiary.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+  <div class="page-header">
+    <h1>
+      BENEFICIÁRIOS
+    </h1>
+  </div>
+  <br>
+  <div class="table-responsive">
+    <table id="tblbeneficiaries" class="table table-bor table-striped table-hover" cellspacing="0" width="100%">
+      <thead>
+        <tr>
+          <th>
+            <%= model_class.human_attribute_name(:id) %>
+          </th>
+          <th>
+            <%= model_class.human_attribute_name(:projeto) %>
+          </th>
+          <th>
+            <%= model_class.human_attribute_name(:nome) %>
+          </th>
+          
+          <th>
+            RG
+          </th>
+          <th>
+            CPF
+          </th>
+          <th>
+            <%= model_class.human_attribute_name(:telefone) %>
+          </th>
+          
+          <th>
+            Menor
+          </th>
+          <th>
+            Responsável
+          </th>
+          
+          <th>
+            <%=t '.actions', :default => t("helpers.actions") %>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @beneficiaries.each do |beneficiary| %>
+          <tr>
+            <td>
+              <%= link_to beneficiary.id, beneficiary_path(beneficiary) %>
+            </td>
+            <td>
+              <%= beneficiary.projeto %>
+            </td>
+            <td>
+              <%= beneficiary.nome %>
+            </td>
+            
+            
+            <td>
+              <%= beneficiary.rg %>
+            </td>
+            <td>
+              <%= beneficiary.cpf %>
+            </td>
+            <td>
+              <%= beneficiary.telefone %>
+            </td>
+            
+            <td>
+              <%= beneficiary.menor %>
+            </td>
+            <td>
+              <%= beneficiary.responsavel %>
+            </td>
+            
+            <td>
+              <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_beneficiary_path(beneficiary), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.show', :default => t("helpers.links.show")),
+                <%= link_to t('.show', :default => t("helpers.links.show")),
                       beneficiary_path(beneficiary), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       beneficiary_path(beneficiary),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
-<%= link_to t('.new', :default => t("helpers.links.new")),
+            </td>
+          </tr>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
             new_beneficiary_path,
             :class => 'btn btn-success btn-lg' %>
-            
-            
-            
-            
-            
-            <br>
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+
+
+    <br>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
