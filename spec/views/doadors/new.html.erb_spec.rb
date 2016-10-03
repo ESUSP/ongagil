@@ -1,3 +1,5 @@
+=begin
+
 require 'rails_helper'
 
 RSpec.describe "doadors/new", type: :view do
@@ -10,6 +12,7 @@ RSpec.describe "doadors/new", type: :view do
       :forma => "MyString"
     ))
   end
+
 
   it "renders new doador form" do
     render
@@ -28,3 +31,5 @@ RSpec.describe "doadors/new", type: :view do
     end
   end
 end
+
+=end
