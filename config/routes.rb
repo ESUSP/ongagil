@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
 
+#<<<<<<< HEAD
+  resources :projetos
+  root 'welcome#index'
+#=======
   resources :doadors
   resources :beneficiaries
   get '/beneficiaries/new', to: 'beneficiaries#new', as: 'beneficiaries_new'
   get '/beneficiaries/edit', to: 'beneficiaries#edit', as: 'beneficiaries_edit'
-
-   root 'welcome#index'
+#>>>>>>> 9102b7dddff7f90a1a9f7749e76ff707d78c9eed
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :usuarios
 end

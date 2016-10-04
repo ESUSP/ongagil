@@ -10,38 +10,58 @@
       </ul>
     </div>
   <% end %>
+  
+  <form class="user-form form-horizontal" role="form">
 
-  <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_field :nome %>
+  <div class="field form-group">
+    <%= f.label "Nome", :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+      <%= f.text_field :nome, :class => 'form-control' , required: true %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :endereco %>
-    <%= f.text_area :endereco %>
+  <div class="field form-group">
+    <%= f.label "Endereço", :class =>  'control-label col-sm-3' %>
+    <div class="col-sm-9">
+      <%= f.text_field :endereco, :class =>  'form-control', required: true %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :telefone %>
-    <%= f.number_field :telefone %>
+  <div class="field form-group">
+    <%= f.label "Telefone", :class =>  'control-label col-sm-3' %>
+    <div class="col-sm-9">
+      <%= f.number_field :telefone, required: true %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :frequencia %>
-    <%= f.text_field :frequencia %>
+  <div class="field form-group">
+    <%= f.label "Frequencia de contribuição", :class =>  'control-label col-sm-3' %>
+      <%= f.select :frequencia, ['mensal', 'semanal', 'doacao única', 'anual']  %>
   </div>
 
-  <div class="field">
-    <%= f.label :forma %>
-    <%= f.text_field :forma %>
+  <div class="field form group">
+    <%= f.label "Forma de doação", :class =>  'control-label col-sm-3' %>
+      <%= f.select :forma, ['boleto', 'cartao de credito', 'debito automático', 'dinheiro'] %>
   </div>
 
-  <div class="field">
-    <%= f.label :data %>
-    <%= f.date_select :data %>
+  <div class="field form group">
+    <%= f.label "Data da primeira doação", :class => 'control-label col-sm-3' %>
+      <%= f.date_select :data %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Criar Doador"%>
   </div>
+  
+  <%= hidden_field_tag 'step_commit', '' %>
+  <span style="float:left;">
+    <br>
+    <br>
+    <%= button_tag "Limpar", type: :reset %>
+  </span>
+</form>
 <% end %>
+
+
+
+

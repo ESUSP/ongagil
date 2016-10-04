@@ -1,3 +1,5 @@
+=begin
+
 require 'rails_helper'
 
 RSpec.describe "doadors/edit", type: :view do
@@ -28,3 +30,5 @@ RSpec.describe "doadors/edit", type: :view do
     end
   end
 end
+
+=end
