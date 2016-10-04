@@ -1,14 +1,160 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ONG Ágil</title>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" crossorigin="anonymous" />
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+            <link rel="stylesheet" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+            <style>
+                body {
+                    margin-top: 50px;
+                }
+            </style>
+</head>
 
+<body>
+
+
+    <!-- Navigation -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/<%= fontawesome_version %>/css/font-awesome.min.css" rel="stylesheet">
+   
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <style>
+        body {
+            margin-top: 50px;
+        }
+    </style>
+        
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <script src="https://code.jquery.com/ui/<%= jqueryui_version %>/jquery-ui.min.js"></script>
+  </head>       
+<body>
 
-  <body>
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">ONG Ágil</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav">
+
+                    <li>
+                        <a href="#">Projetos</a>
+                    </li>
+                    <li>
+                        <a href="#">Atividades</a>
+                    </li>
+                    <li>
+                        <a href="#">Doações</a>
+                    </li>
+                    <li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Beneficiarios 
+                            <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/beneficiaries">Manter beneficiários</a></li>
+                                <li><a href="/beneficiaries">Solicitar participação</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/doadors">Doadores</a>
+                        </li>
+                        <li>
+                            <a href="#">Usuários</a>
+                        </li>
+                        <li>
+                            <a href="#">Chat Box</a>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+
+<div class="container">
     <%= yield %>
+</div>
+
+
+        <!-- Footer -->
+        <div class="container-fluid">
+            <footer>
+                <nav class="navbar navbar-inverse navbar-fixed-down" role="navigation">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                       </button>
+                            <a class="navbar-brand" href="#">ONG Ágil - 2016</a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a href="#">Sobre nós</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Ajuda</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container -->
+                </nav>
+
+            </footer>
+        </div>
+        <!-- scripts -->
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.min.js"></script>
+            <script>
+                $('document').ready(function() {
+                    $('#tblbeneficiaries').DataTable({
+                        "language": {
+                            "lengthMenu": "Mostrando _MENU_ registros por página",
+                            "zeroRecords": "Não há registros encontrados",
+                            "info": "Mostrando página _PAGE_ de _PAGES_",
+                            "infoEmpty": "Não há informações",
+                            "infoFiltered": "(filtrando de _MAX_ registros)"
+                        }
+                    });
+                });
+            </script>
+            <script>
+                // define as mascaras para os campos 
+                $('.mask_rg').mask('00.000.000-AA');
+                $('.mask_tel').mask('(00) 0000-0000');
+            </script>
+            <!-- /scripts -->
+</body>
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/js/bootstrap.min.js"></script>
   </body>
 </html>

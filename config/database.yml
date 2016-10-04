@@ -85,7 +85,7 @@ test: &test
 production:
   <<: *default
   database: ongagilprod
-  username: ongagil
+  username: ubuntu
   password: <%= ENV['ONGAGIL_DATABASE_PASSWORD'] %>
 
 cucumber:

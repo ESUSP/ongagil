@@ -1,0 +1,2 @@
+json.extract! beneficiary, :id, :projeto, :nome, :dataNasc, :estadoCivil, :rg, :cpf, :telefone, :endereco, :bairro, :estado, :pais, :cep, :menor, :responsavel, :created_at, :updated_at
+json.url beneficiary_url(beneficiary, format: :json)

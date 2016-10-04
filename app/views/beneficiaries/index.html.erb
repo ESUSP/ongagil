@@ -1,0 +1,118 @@
+<%- model_class = Beneficiary -%>
+
+  <div class="page-header">
+    <h1>
+      BENEFICIÁRIOS
+    </h1>
+  </div>
+  <br>
+  <div class="table-responsive">
+    <table id="tblbeneficiaries" class="table table-bor table-striped table-hover" cellspacing="0" width="100%">
+      <thead>
+        <tr>
+          <th>
+            <%= model_class.human_attribute_name(:id) %>
+          </th>
+          <th>
+            Projeto
+          </th>
+          <th>
+            Nome
+          </th>
+          <th>
+            Estado civil
+          </th>
+          <th>
+            RG
+          </th>
+          <th>
+            CPF
+          </th>
+          <th>
+            Telefone
+          </th>
+          <th>
+            Menor
+          </th>
+          <th>
+            Responsável
+          </th>
+          
+          <th>
+            <%=t '.actions', :default => t("helpers.actions") %>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @beneficiaries.each do |beneficiary| %>
+          <tr>
+            <td>
+              <%= link_to beneficiary.id, beneficiary_path(beneficiary) %>
+            </td>
+            <td>
+              <%= beneficiary.projeto %>
+            </td>
+            <td>
+              <%= beneficiary.nome %>
+            </td>
+            <td>
+              <%= beneficiary.estadoCivil %>
+            </td>
+            
+            <td>
+              <%= beneficiary.rg %>
+            </td>
+            <td>
+              <%= beneficiary.cpf %>
+            </td>
+            <td>
+              <%= beneficiary.telefone %>
+            </td>
+            
+            <td>
+              <%= beneficiary.menor %>
+            </td>
+            <td>
+              <%= beneficiary.responsavel %>
+            </td>
+
+            <td>
+              <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_beneficiary_path(beneficiary), :class => 'btn btn-default btn-xs' %>
+                <%= link_to t('.show', :default => t("helpers.links.show")),
+                      beneficiary_path(beneficiary), :class => 'btn btn-default btn-xs' %>
+                  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      beneficiary_path(beneficiary),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+            </td>
+          </tr>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+            new_beneficiary_path,
+            :class => 'btn btn-success btn-lg' %>
+
+
+
+
+
+    <br>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
