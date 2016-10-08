@@ -31,11 +31,11 @@ RSpec.describe "projetos/new", type: :view do
 
       assert_select "input#projeto_Area[name=?]", "projeto[Area]"
 
-      assert_select "input#projeto_OngNumero[name=?]", "projeto[OngNumero]"
+      #assert_select "input#projeto_OngNumero[name=?]", "projeto[OngNumero]"
 
       assert_select "input#projeto_Ong[name=?]", "projeto[Ong]"
 
-      assert_select "input#projeto_RespNumero[name=?]", "projeto[RespNumero]"
+      #assert_select "input#projeto_RespNumero[name=?]", "projeto[RespNumero]"
 
       assert_select "input#projeto_RespNome[name=?]", "projeto[RespNome]"
 
