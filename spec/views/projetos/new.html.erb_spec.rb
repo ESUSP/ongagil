@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "projetos/new", type: :view do
   before(:each) do
     assign(:projeto, Projeto.new(
-      :ProjetoID => 1,
+      #:ProjetoID => 1,
       :Status => "MyString",
       :Projeto => "MyString",
       :Tipo => "MyString",
@@ -21,7 +21,7 @@ RSpec.describe "projetos/new", type: :view do
 
     assert_select "form[action=?][method=?]", projetos_path, "post" do
 
-      assert_select "input#projeto_ProjetoID[name=?]", "projeto[ProjetoID]"
+     # assert_select "input#projeto_ProjetoID[name=?]", "projeto[ProjetoID]"
 
       assert_select "input#projeto_Status[name=?]", "projeto[Status]"
 

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "projetos/show", type: :view do
   before(:each) do
     @projeto = assign(:projeto, Projeto.create!(
-      :ProjetoID => 2,
+      #:ProjetoID => 2,
       :Status => "Status",
       :Projeto => "Projeto",
       :Tipo => "Tipo",
@@ -18,7 +18,7 @@ RSpec.describe "projetos/show", type: :view do
 
   it "renders attributes in <p>" do
     render
-    expect(rendered).to match(/2/)
+    #expect(rendered).to match(/2/)
     expect(rendered).to match(/Status/)
     expect(rendered).to match(/Projeto/)
     expect(rendered).to match(/Tipo/)

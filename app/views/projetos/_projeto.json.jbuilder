@@ -1,2 +1,2 @@
-json.extract! projeto, :id, :ProjetoID, :Status, :Projeto, :Tipo, :Area, :DataInicio, :DataFim, :OngNumero, :Ong, :RespNumero, :RespNome, :DescricaoProjeto, :created_at, :updated_at
+json.extract! projeto, :id, :Status, :Projeto, :Tipo, :Area, :DataInicio, :DataFim, :OngNumero, :Ong, :RespNumero, :RespNome, :DescricaoProjeto, :created_at, :updated_at
 json.url projeto_url(projeto, format: :json)

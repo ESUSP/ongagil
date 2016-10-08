@@ -29,10 +29,9 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  username: ubuntu
-
+  username: cabox
   # The password associated with the postgres role (username).
-  password: ubuntu
+  password: cabox
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -58,10 +57,10 @@ development:
 test: &test
   <<: *default
   database: ongagiltest
-  username: ubuntu
+  username: cabox
 
   # The password associated with the postgres role (username).
-  password: ubuntu
+  password: cabox
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -85,8 +84,9 @@ test: &test
 production:
   <<: *default
   database: ongagilprod
-  username: ubuntu
-  password: <%= ENV['ONGAGIL_DATABASE_PASSWORD'] %>
+  username: cabox
+  password: cabox
+#<%= ENV['ONGAGIL_DATABASE_PASSWORD'] %>
 
 cucumber:
   <<: *test
