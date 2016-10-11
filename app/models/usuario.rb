@@ -14,4 +14,9 @@ class Usuario < ApplicationRecord
   validates :termos_de_uso, 
   			acceptance: {message: 'É necessário aceitar os termos de serviço.'}
 
+
+  def self.LogarAdmin()
+    usr = Usuario.find_by(email: 'admin@admin.com')
+    session[:id] = usr.id
+  end    
 end

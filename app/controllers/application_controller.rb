@@ -11,7 +11,9 @@ class ApplicationController < ActionController::Base
   protected
     def ensure_login
       # Always go to login page unless session contains id (User)
-      redirect_to login_path unless logged_in?
+      if(Rails.env == "production")
+        redirect_to login_path unless logged_in?
+      end
     end
 
     def logged_in?

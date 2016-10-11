@@ -16,5 +16,3 @@ And Eu preencho o formulário com os seguintes atributos:
 	|usuario_password    			| 12345					|
 	|usuario_password_confirmation 	| 12345			       	|
 And Eu clico em Registrar
-
-Scenario: Usuario Registra-se
