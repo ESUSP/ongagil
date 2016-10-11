@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :projetos
   root 'welcome#index'
+
   resources :doadors
   resources :beneficiaries
   get '/beneficiaries/new', to: 'beneficiaries#new', as: 'beneficiaries_new'
@@ -17,7 +18,5 @@ Rails.application.routes.draw do
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :usuarios
-  
-  
   
 end
