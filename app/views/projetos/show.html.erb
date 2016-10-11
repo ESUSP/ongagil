@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Projetoid:</strong>
-  <%= @projeto.ProjetoID %>
-</p>
 
 <p>
   <strong>Status:</strong>
@@ -60,5 +56,5 @@
   <%= @projeto.DescricaoProjeto %>
 </p>
 
-<%= link_to 'Edit', edit_projeto_path(@projeto) %> |
-<%= link_to 'Back', projetos_path %>
+<%= link_to 'Edit', edit_projeto_path(@projeto), class:"btn btn-default" %> |
+<%= link_to 'Back', projetos_path, class:"btn btn-default" %>
