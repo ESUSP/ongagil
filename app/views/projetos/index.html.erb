@@ -24,7 +24,8 @@
   <tbody>
     <% @projetos.each do |projeto| %>
       <tr>
-        <td><%= projeto.ProjetoID %></td>
+        <%= link_to projeto.id, projeto_path(projeto) %>
+        <td><%= projeto.Projeto %></td>
         <td><%= projeto.Status %></td>
         <td><%= projeto.Projeto %></td>
         <td><%= projeto.Tipo %></td>
