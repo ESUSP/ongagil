@@ -16,21 +16,21 @@
   <div class="field form-group">
       <%= f.label :projeto, :class => 'control-label col-sm-3' %>
     <div class="col-sm-9">
-      <%= f.text_field :projeto, :size => 20, :class => 'form-control' %>
+      <%= f.text_field :projeto, :size => 20, :class => 'form-control'  , required: true %>
     </div>
   </div>
 
   <div class="field form-group">
     <%= f.label :nome, :class => 'control-label col-sm-3' %>
     <div class="col-sm-9">
-    <%= f.text_field :nome, :size => 80, :class => 'form-control' %>
+    <%= f.text_field :nome, :size => 80, :class => 'form-control'  , required: true %>
     </div>
   </div>
 
   <div class="field form-group">
     <%= f.label :dataNasc, :class => 'control-label col-sm-3' %>
     <div class="col-sm-9">
-    <%= f.date_field :dataNasc, :size => 40, :class => 'form-control'  %>
+    <%= f.date_field :dataNasc, :size => 40, :class => 'form-control'   %>
     </div>
   </div>
 
@@ -44,21 +44,21 @@
   <div class="field form-group">
     <%= f.label :rg, :class => 'control-label col-sm-3' %>
     <div class="col-sm-9">
-    <%= f.text_field :rg, :size => 40, :class => 'form-control mask_rg', placeholder: 'XX.XXX.XXX-X', :data=> {:mask=> '99.999.999-9'}  %>
+    <%= f.text_field :rg, :size => 40, :class => 'form-control mask_rg', placeholder: 'XX.XXX.XXX-X', :data=> {:mask=> '99.999.999-9'}, required: true  %>
     </div>
   </div>
 
   <div class="field form-group">
     <%= f.label :cpf, :class => 'control-label col-sm-3'  %>
     <div class="col-sm-9">
-    <%= f.text_field :cpf, :size => 40, :class => 'form-control', placeholder: 'XXX.XXX.XXX.XXX', :data=> {:mask=> '999.999.999.9999'}%>
+    <%= f.text_field :cpf, :size => 40, :class => 'form-control', placeholder: 'XXX.XXX.XXX.XXX', :data=> {:mask=> '999.999.999.9999'}, required: true%>
     </div>
   </div>
 
   <div class="field form-group">
     <%= f.label :telefone, :class => 'control-label col-sm-3'  %>
     <div class="col-sm-9">
-    <%= f.text_field :telefone, :size => 40, :class => 'form-control', placeholder: 'XX XXXX-XXXX', :data=> {:mask=> '99 9999-9999'} %>
+    <%= f.text_field :telefone, :size => 40, :class => 'form-control', placeholder: 'XX XXXX-XXXX', :data=> {:mask=> '99 9999-9999'}, required: true%>
     </div>
   </div>
 
