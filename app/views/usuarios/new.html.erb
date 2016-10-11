@@ -13,7 +13,7 @@
 				<div class="col-sm-12">
 					<div class="form-group">
 				  		<div id="error_explanation">
-			    			<h4><%= pluralize(@usuario.errors.count, "erro(s)") %> impediram a criação do usuário:</h4>
+			    			<h4><%= pluralize(@usuario.errors.count, "erro") %> impediram a criação do usuário:</h4>
 			    			<ul>
 			    			<% console %>
 					    		<% @usuario.errors.messages.each do |campo,mensagem| %>
@@ -78,15 +78,15 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-6">
 					<div class="form-group">
-						<label for="senha">Senha *</label>
-						<%= usuario_form.text_field :senha, class: 'form-control', required: true, type: 'password' %>
+						<label for="password">Senha *</label>
+						<%= usuario_form.text_field :password, class: 'form-control', required: true, type: 'password' %>
 						<span class="help-block">Digite uma senha para sua nova conta.</span>
 					</div>
 				</div>		
   				<div class="col-sm-12 col-md-6">
 					<div class="form-group">
-						<label for="senha">Repita a Senha *</label>
-						<%= usuario_form.text_field :senha_confirmation, class: 'form-control', required: true, type: 'password' %>
+						<label for="password_confirmation">Repita a Senha *</label>
+						<%= usuario_form.text_field :password_confirmation, class: 'form-control', required: true, type: 'password' %>
 						<span class="help-block">Digite a senha novamente. Senhas devem coincidir.</span>
 					</div>
 				</div>	
@@ -104,7 +104,7 @@
 
   		<div class="modal-footer">
 			<input type="hidden" name="isEmpty" value="">
-			<button type="input" name="submit" value="newAccount" class="btn btn-success btn-icon"><i class="fa fa-check"></i> Registrar</button>
+			<button type="input" id="registrar" name="submit" value="newAccount" class="btn btn-success btn-icon"><i class="fa fa-check"></i> Registrar</button>
 			<a href="/usuarios"><button type="button" class="btn btn-default btn-icon" data-dismiss="modal"><i class="fa fa-times-circle"></i> Cancelar</button></a>
 		</div>
  

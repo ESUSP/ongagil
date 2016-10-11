@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161004213504) do
+=======
+ActiveRecord::Schema.define(version: 20161010230052) do
+>>>>>>> 65b631928f63eb8ea6b26108159fbf5bf8ea729b
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,12 +38,15 @@ ActiveRecord::Schema.define(version: 20161004213504) do
     t.datetime "updated_at",  null: false
   end
 
+<<<<<<< HEAD
   create_table "beneficiarios", force: :cascade do |t|
     t.string   "nome"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> 65b631928f63eb8ea6b26108159fbf5bf8ea729b
   create_table "doadors", force: :cascade do |t|
     t.string   "nome"
     t.text     "endereco"
@@ -68,16 +75,16 @@ ActiveRecord::Schema.define(version: 20161004213504) do
   end
 
   create_table "usuarios", force: :cascade do |t|
-    t.string   "email",      limit: 254
-    t.string   "nome",       limit: 254
-    t.string   "endereco",   limit: 300
-    t.string   "telefone",   limit: 30
-    t.string   "estado",     limit: 2
-    t.string   "cidade",     limit: 200
+    t.string   "email",           limit: 254
+    t.string   "nome",            limit: 254
+    t.string   "endereco",        limit: 300
+    t.string   "telefone",        limit: 30
+    t.string   "estado",          limit: 2
+    t.string   "cidade",          limit: 200
     t.boolean  "ocultar"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "senha"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "password_digest"
     t.index ["email"], name: "index_usuarios_on_email", using: :btree
   end
 

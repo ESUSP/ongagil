@@ -12,56 +12,84 @@
   <% end %>
   
   <form class="user-form form-horizontal" role="form">
+    
+  <br>
 
   <div class="field form-group">
     <%= f.label "Nome", :class => 'control-label col-sm-3' %>
     <div class="col-sm-9">
-      <%= f.text_field :nome, :class => 'form-control' , required: true %>
+      <%= f.text_field :nome, :size => 20, :class => 'form-control' , required: true %>
     </div>
   </div>
+  
+  <br> </br>
 
   <div class="field form-group">
     <%= f.label "Endereço", :class =>  'control-label col-sm-3' %>
     <div class="col-sm-9">
-      <%= f.text_field :endereco, :class =>  'form-control', required: true %>
+      <%= f.text_field :endereco, :size => 20, :class =>  'form-control', required: true %>
     </div>
   </div>
+
+  <br> </br>
 
   <div class="field form-group">
     <%= f.label "Telefone", :class =>  'control-label col-sm-3' %>
     <div class="col-sm-9">
-      <%= f.number_field :telefone, required: true %>
+      <%= f.text_field :telefone, required: true, placeholder: 'XX.XXX.XXX.XXX', :data => {:mask=> '99-9999-9999'} %>
     </div>
   </div>
+  
+  <br> </br>
 
   <div class="field form-group">
     <%= f.label "Frequencia de contribuição", :class =>  'control-label col-sm-3' %>
-      <%= f.select :frequencia, ['mensal', 'semanal', 'doacao única', 'anual']  %>
+    <div class="col-sm-15">
+      <%= f.select :frequencia, ['mensal', 'semanal', 'doacao única', 'anual'], :class =>  'form-control'  %>
+    </div>
   </div>
 
   <div class="field form group">
     <%= f.label "Forma de doação", :class =>  'control-label col-sm-3' %>
+    <div class="col-sm-15">
       <%= f.select :forma, ['boleto', 'cartao de credito', 'debito automático', 'dinheiro'] %>
+    </div>
   </div>
+
+  <br>
 
   <div class="field form group">
     <%= f.label "Data da primeira doação", :class => 'control-label col-sm-3' %>
-      <%= f.date_select :data %>
+    <div class="col-sm-20">
+      <%= f.date_field :data %>
+    </div>
   </div>
+  
+  <br>
 
-  <div class="actions">
-    <%= f.submit "Criar Doador"%>
+  <div class="actions text-center">
+    <b>
+    <div class=" col-sm-offset-3 col-sm-2">
+      <p>
+        <%= button_tag "Limpar", type: :reset %>
+      </p>
+    </div>
+    <div class="col-sm-3">
+      <p>
+        <%= f.submit "Criar Doador"%>
+      </p>
+    </div>
+    </b>
   </div>
   
   <%= hidden_field_tag 'step_commit', '' %>
   <span style="float:left;">
     <br>
     <br>
-    <%= button_tag "Limpar", type: :reset %>
+
   </span>
 </form>
 <% end %>
-
 
 
 
