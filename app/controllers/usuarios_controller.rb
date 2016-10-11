@@ -1,4 +1,5 @@
 class UsuariosController < ApplicationController
+  skip_before_action :ensure_login, only: [:new, :create]
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
   
   # GET /usuarios
