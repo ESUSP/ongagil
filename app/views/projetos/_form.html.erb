@@ -1,0 +1,83 @@
+<%= form_for(projeto) do |f| %>
+
+<div class="row">
+  <div class="col-xs-8">
+    
+  <% if projeto.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger has-error">
+      <h2><%= pluralize(projeto.errors.count, "error") %> impedem que este projeto seja criado:</h2>
+
+      <ul>
+      <% projeto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :"Nome do Projeto" %>
+    <%= f.text_field :Projeto, class:"form-control" %>
+  </div>
+    
+  <div class="field">
+    <%= f.label :"Descrição" %>
+    <%= f.text_field :DescricaoProjeto, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Status %>
+    <%= f.text_field :Status, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Tipo %>
+    <%= f.text_field :Tipo, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Area %>
+    <%= f.text_field :Area, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Data de Início" %>
+    <%= f.date_select :DataInicio, class:"form-group" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Data de Termino" %>
+    <%= f.date_select :DataFim, class:"form-group" %>
+  </div>
+
+  <!--<div class="field">
+    <%= f.label :OngNumero %>
+    <%= f.number_field :OngNumero, class:"form-control" %>
+  </div>-->
+
+  <div class="field">
+    <%= f.label :"Ong" %>
+    <%= f.text_field :Ong, class:"form-control" %>
+  </div>
+
+  <!--<div class="field">
+    <%= f.label :RespNumero %>
+    <%= f.number_field :RespNumero, class:"form-control" %>
+  </div>-->
+
+  <div class="field">
+    <%= f.label :"RespNome" %>
+    <%= f.text_field :RespNome, class:"form-control" %>
+  </div>
+
+
+
+
+
+  <div class="actions">
+    <%= f.submit :Enviar, class:"btn btn-success" %>
+  </div>
+    
+  </div><!-- col and row -->  
+</div>
+<% end %>
