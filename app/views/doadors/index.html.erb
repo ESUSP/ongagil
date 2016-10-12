@@ -1,19 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Doador -%>
 
-<h1>Doadors</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Endereco</th>
-      <th>Telefone</th>
-      <th>Frequencia</th>
-      <th>Forma</th>
-      <th>Data</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="page-header">
+    <h1>
+      Doadores
+    </h1>
+  </div>
+<br>
+  <div class="table-responsive">
+     <table id="tbldoadors" class="table table-bor table-striped table-hover" cellspacing="0" width="100%">
+      <thead>
+         <tr>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Telefone</th>
+            <th>Frequência Contribuição</th>
+            <th>Forma Doação</th>
+            <th>Data 1a. Doação</th>
+            <th colspan="3"></th>
+        </tr>
+      </thead>
 
   <tbody>
     <% @doadors.each do |doador| %>
@@ -24,14 +29,19 @@
         <td><%= doador.frequencia %></td>
         <td><%= doador.forma %></td>
         <td><%= doador.data %></td>
-        <td><%= link_to 'Show', doador %></td>
-        <td><%= link_to 'Edit', edit_doador_path(doador) %></td>
-        <td><%= link_to 'Destroy', doador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', doador, class: "btn btn-default" %></td>
+        <td><%= link_to 'Editar', edit_doador_path(doador),  class: "btn btn-default" %></td>
+        <td><%= link_to 'Deletar', doador,  class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
-<%= link_to 'New Doador', new_doador_path %>
+<b><%= link_to 'Novo Doador', new_doador_path %><b>
+
+<br>
+<br>
+<br>
