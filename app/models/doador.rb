@@ -3,5 +3,8 @@ class Doador < ApplicationRecord
     validates :endereco, presence:true
     validates :telefone, presence:true
     
+    def self.search(query)
+        where("nome ilike ?", "%#{query}%")
+    end
     
 end

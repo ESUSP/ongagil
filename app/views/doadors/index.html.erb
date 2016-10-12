@@ -43,9 +43,14 @@
 </table>
 </div>
 
-<br>
+<%= will_paginate @doadors %>
 
-<b><%= link_to 'Novo Doador', new_doador_path, class:"btn btn-success" %><b>
+<br>
+   <div class="col-md-12">
+      <span class="pull-right">
+        <%= link_to 'Novo Doador', new_doador_path, class:"btn btn-success" %>  
+      </span> 
+    </div>
 
 <br>
 <br>
