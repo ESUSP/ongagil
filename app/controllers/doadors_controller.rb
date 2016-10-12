@@ -7,9 +7,11 @@ class DoadorsController < ApplicationController
     # @doadors = Doador.all
     if params[:search]
       #@doadors = Doador.search(params[:search])
-      @doadors= Doador.paginate(page: params[:page],:per_page => 5).search(params[:search])
+      #@doadors= Doador.paginate(page: params[:page],:per_page => 5).search(params[:search])
+      @doadors= Doador.paginate(:page => 1, :per_page => 10).search(params[:search])
     else
-      @doadors = Doador.paginate(:page => params[:page], :per_page => 10)
+      #@doadors = Doador.paginate(:page => params[:page], :per_page => 10)
+      @doadors = Doador.paginate(:page => 1, :per_page => 10)
     end
   end
 
