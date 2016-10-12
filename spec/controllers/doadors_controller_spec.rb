@@ -1,4 +1,4 @@
-=begin
+
 
 require 'rails_helper'
 
@@ -161,5 +161,4 @@ RSpec.describe DoadorsController, type: :controller do
 
 end
 
-=end
 
