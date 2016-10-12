@@ -1,4 +1,4 @@
-
+=begin
 When(/^[Ee]u acesso a pagina de registro$/) do
   visit new_usuario_path
 end
@@ -25,3 +25,4 @@ end
 Then(/^[Ee]u devo ver erros$/) do
   expect(page).to have_content("erro")
 end
+=end
