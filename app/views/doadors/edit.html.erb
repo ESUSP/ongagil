@@ -1,6 +1,13 @@
-<h1>Editing Doador</h1>
+<h1>Editar Doador</h1>
 
 <%= render 'form', doador: @doador %>
 
-<%= link_to 'Show', @doador %> |
-<%= link_to 'Back', doadors_path %>
+<br> </br>
+
+    <div class="col-sm-3">
+        <b> <%= link_to 'Mostrar', @doador, class: 'btn btn-default' %> | <%= link_to 'Voltar', doadors_path, class: 'btn btn-default' %> <b>
+    </div>
+    
+<br> </br>
+
+

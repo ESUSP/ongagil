@@ -1,5 +1,10 @@
 <%- model_class = Doador -%>
 
+<%= form_tag(doadors_path, :method => :get) do %>
+<%= text_field_tag 'search', nil, placeholder: "Nome completo do Doador" %>
+<%= submit_tag "Buscar" %>
+<% end %>
+
   <div class="page-header">
     <h1>
       Doadores
@@ -30,8 +35,8 @@
         <td><%= doador.forma %></td>
         <td><%= doador.data %></td>
         <td><%= link_to 'Mostrar', doador, class: "btn btn-default" %></td>
-        <td><%= link_to 'Editar', edit_doador_path(doador),  class: "btn btn-default" %></td>
-        <td><%= link_to 'Deletar', doador,  class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Editar', edit_doador_path(doador),  class: "btn btn-warning" %></td>
+        <td><%= link_to 'Deletar', doador,  class: "btn btn-danger", method: :delete, data: { confirm: 'Voce tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -40,7 +45,7 @@
 
 <br>
 
-<b><%= link_to 'Novo Doador', new_doador_path %><b>
+<b><%= link_to 'Novo Doador', new_doador_path, class:"btn btn-success" %><b>
 
 <br>
 <br>
