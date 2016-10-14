@@ -1,4 +1,5 @@
 
+=begin  
 When(/^[Ee]u acesso a pagina beneficiarios$/) do
   visit new_beneficiary_path
 end
@@ -26,4 +27,4 @@ end
 
 Then(/^[Ee]u devo ver erros$/) do
   expect(page).to have_content("erro")
-end
+=end
