@@ -4,7 +4,6 @@ require 'rails_helper'
 RSpec.describe Doador, type: :model do
   #pending "add some examples to (or delete) #{__FILE__}"
   
-=begin 
   context "Testando a View do doador" do
     it "Cadastrar um doador" do
     visit '/doadors/new'
@@ -24,7 +23,6 @@ RSpec.describe Doador, type: :model do
     expect(page).to have_content 'Doador'
   end
 end 
-=end
 
   context "Validade do Doador" do
       it "Doador válido?" do

@@ -41,5 +41,5 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   
   #Capybara
-  #config.allow_concurrency = false
+  config.allow_concurrency = false
 end
