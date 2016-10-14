@@ -8,15 +8,20 @@ Then(/^[Ee]u devo ver um fomulário$/) do
 end
 
 
-When /^[Ee]u clico no (.*)$/ do |button|
-  click_button button
+When /^[Ee]u aperto (.*)$/ do |button|
+  click_button cadastrar
 end
 
-When /^Eu preencho o formulário com os seguintes atributos:$/ do |table|
-  puts table.rows_hash
-  criteria = table.rows_hash.each do |field, value|
-    fill_in 'projeto', :with => "projeto"
-  end
+When /^[Ee]u clico no $/ do |button|
+ click_button salvar
+end
+
+When /^Eu preencho:$/ do |table|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^Eu clico no cadastrar$/) do
+  pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then(/^[Ee]u devo ver erros$/) do

@@ -11,7 +11,7 @@ Then Eu devo ver um fomulário
 
 Scenario: Gestor Preenche formulário
 When Eu acesso a pagina beneficiarios
-When Eu preencho
+When Eu preencho:
 	|projeto    		  		| Projeto das criancas   	|
 	|nome   		  	    	| Ligia Cassia M. C. Santos	|
 	|dataNasc 		        	| 09/11/1992				|
