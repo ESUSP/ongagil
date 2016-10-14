@@ -12,10 +12,10 @@ When /^[Ee]u clico no (.*)$/ do |button|
   click_button button
 end
 
-When /^[Ee]u preencho o formulário:$/ do |table|
+When /^Eu preencho o formulário com os seguintes atributos:$/ do |table|
   puts table.rows_hash
   criteria = table.rows_hash.each do |field, value|
-    fill_in field, :with => value
+    fill_in 'projeto', :with => "projeto"
   end
 end
 
