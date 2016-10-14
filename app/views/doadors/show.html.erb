@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<b ALIGN=CENTER> <h1>Detalhes do Doador</h1> </b>
 
 <p>
   <strong>Nome:</strong>
@@ -30,5 +30,9 @@
   <%= @doador.data %>
 </p>
 
-<%= link_to 'Edit', edit_doador_path(@doador) %> |
-<%= link_to 'Back', doadors_path %>
+    <div class="col-sm-3">
+        <b> <%= link_to 'Editar', edit_doador_path(@doador), class: 'btn btn-default' %> | <%= link_to 'Voltar', doadors_path, class: 'btn btn-default' %> <b>
+    </div>
+    
+<br> </br>
+

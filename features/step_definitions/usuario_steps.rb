@@ -1,4 +1,3 @@
-
 When(/^[Ee]u acesso a pagina de registro$/) do
   visit new_usuario_path
 end

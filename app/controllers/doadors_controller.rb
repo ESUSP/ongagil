@@ -4,7 +4,15 @@ class DoadorsController < ApplicationController
   # GET /doadors
   # GET /doadors.json
   def index
-    @doadors = Doador.all
+    # @doadors = Doador.all
+    if params[:search]
+      #@doadors = Doador.search(params[:search])
+      #@doadors= Doador.paginate(page: params[:page],:per_page => 5).search(params[:search])
+      @doadors= Doador.paginate(:page => 1, :per_page => 10).search(params[:search])
+    else
+      #@doadors = Doador.paginate(:page => params[:page], :per_page => 10)
+      @doadors = Doador.paginate(:page => 1, :per_page => 10)
+    end
   end
 
   # GET /doadors/1
@@ -28,7 +36,7 @@ class DoadorsController < ApplicationController
 
     respond_to do |format|
       if @doador.save
-        format.html { redirect_to @doador, notice: 'Doador was successfully created.' }
+        format.html { redirect_to @doador, notice: 'Doador criado com sucesso.' }
         format.json { render :show, status: :created, location: @doador }
       else
         format.html { render :new }
@@ -42,7 +50,7 @@ class DoadorsController < ApplicationController
   def update
     respond_to do |format|
       if @doador.update(doador_params)
-        format.html { redirect_to @doador, notice: 'Doador was successfully updated.' }
+        format.html { redirect_to @doador, notice: 'Doador atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @doador }
       else
         format.html { render :edit }
@@ -56,7 +64,7 @@ class DoadorsController < ApplicationController
   def destroy
     @doador.destroy
     respond_to do |format|
-      format.html { redirect_to doadors_url, notice: 'Doador was successfully destroyed.' }
+      format.html { redirect_to doadors_url, notice: 'Doador excluído com sucesso.' }
       format.json { head :no_content }
     end
   end

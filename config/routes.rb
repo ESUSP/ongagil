@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :beneficiaries
   get '/beneficiaries/new', to: 'beneficiaries#new', as: 'beneficiaries_new'
   get '/beneficiaries/edit', to: 'beneficiaries#edit', as: 'beneficiaries_edit'
-  
+
+  get '/registrar', to: 'usuarios#new'
+
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
