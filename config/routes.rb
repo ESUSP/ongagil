@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :ongs
   get 'sessions/new'
 
   resources :projetos
@@ -15,6 +16,10 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+  
+  get    '/ongs',   to: 'ongs#index'
+  get    '/ongs/new',   to: 'ongs#new'
+  get    '/ongs/edit',   to: 'ongs#edit'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :usuarios

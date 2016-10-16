@@ -1,0 +1,73 @@
+<%= form_for(ong) do |f| %>
+  <% if ong.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ong.errors.count, "error") %> prohibited this ong from being saved:</h2>
+
+      <ul>
+      <% ong.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :endereco %>
+    <%= f.text_field :endereco %>
+  </div>
+
+  <div class="field">
+    <%= f.label :uf %>
+    <%= f.select :uf, ['AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO'], :class =>  'form-control'  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cidade %>
+    <%= f.text_field :cidade %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefone %>
+    <%= f.text_field :telefone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :site %>
+    <%= f.text_field :site %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cnpj %>
+    <%= f.text_field :cnpj %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo %>
+    <%= f.select :tipo, ['Fundação', 'Sociedade Civil', 'Cooperativa', 'Organização Social', 'Entidade Beneficente', 'Negócio Social'], :class =>  'form-control'  %>
+  </div>
+
+  <div class="actions text-center">
+    <b>
+    <div class=" col-sm-offset-3 col-sm-2">
+      <p>
+        <%= button_tag "Limpar", type: :reset %>
+      </p>
+    </div>
+    <div class="col-sm-3">
+      <p>
+        <%= f.submit "Salvar" %>
+      </p>
+    </div>
+    </b>
+  </div>
+<% end %>
