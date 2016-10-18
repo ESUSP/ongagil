@@ -17,7 +17,7 @@ RSpec.describe "Usuarios", type: :request do
 
     it "List usuários para administrador" do
       #post login_path, :login => user.login, :password => 'password'
-      post login_path, attributes_for(:usuario_admin)
+      post login_path, usuario: attributes_for(:usuario_admin)
       get usuarios_path
       expect(response).to render_template(:index)
       expect(response).to have_http_status(200)
