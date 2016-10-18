@@ -7,7 +7,7 @@ RSpec.describe "atividades/show", type: :view do
       :situacao => "Situacao",
       :projeto => "Projeto",
       :projetoid => 2,
-      :atucao => "Atucao",
+      :atuacao => "atuacao",
       :custo => "9.99",
       :cargahoras => "9.99",
       :responsavelid => 3,
@@ -22,7 +22,7 @@ RSpec.describe "atividades/show", type: :view do
     expect(rendered).to match(/Situacao/)
     expect(rendered).to match(/Projeto/)
     expect(rendered).to match(/2/)
-    expect(rendered).to match(/Atucao/)
+    expect(rendered).to match(/atuacao/)
     expect(rendered).to match(/9.99/)
     expect(rendered).to match(/9.99/)
     expect(rendered).to match(/3/)

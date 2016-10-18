@@ -7,7 +7,7 @@ RSpec.describe "atividades/edit", type: :view do
       :situacao => "MyString",
       :projeto => "MyString",
       :projetoid => 1,
-      :atucao => "MyString",
+      :atuacao => "MyString",
       :custo => "9.99",
       :cargahoras => "9.99",
       :responsavelid => 1,
@@ -29,7 +29,7 @@ RSpec.describe "atividades/edit", type: :view do
 
       assert_select "input#atividade_projetoid[name=?]", "atividade[projetoid]"
 
-      assert_select "input#atividade_atucao[name=?]", "atividade[atucao]"
+      assert_select "input#atividade_atuacao[name=?]", "atividade[atuacao]"
 
       assert_select "input#atividade_custo[name=?]", "atividade[custo]"
 
