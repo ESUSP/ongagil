@@ -18,7 +18,7 @@ class Usuario < ApplicationRecord
 
   def self.pesquisar(phash)
     if phash[:nome] || phash[:email] || phash[:telefone]
-      Usuario.all.where(['nome LIKE ? and email LIKE ? and telefone LIKE ?', "%#{phash[:nome]}%", "%#{phash[:email]}%", "%#{phash[:telefone]}%"])
+      Usuario.all.where(['coalesce(nome,\'\') LIKE ? and coalesce(email,\'\') LIKE ? and coalesce(telefone,\'\') LIKE ?', "%#{phash[:nome]}%", "%#{phash[:email]}%", "%#{phash[:telefone]}%"])
     else
       Usuario.all
     end
