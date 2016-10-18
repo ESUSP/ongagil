@@ -1,0 +1,84 @@
+<div class="container">
+<%= form_for(@recebimento) do |f| %>
+  <% if @recebimento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(recebimento.errors.count, "error") %> prohibited this recebimento from being saved:</h2>
+
+      <ul>
+      <% recebimento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  
+  <form class="user-form form-horizontal" role="form">
+  <div class="field form-group">
+      <%= f.label :"Tipo de recebimento:", :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+      <%= f.text_field :local, :size => 40, :class => 'form-control', required: true  %>
+    </div>
+  </div>
+
+<div class="field form-group">
+    <%= f.label :"Data de Recebimento:", :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.date_field :dataRecebimento, :size => 40, :class => 'form-control', required: true    %>
+    </div>
+  </div>
+  
+  <div class="field form-group">
+    <%= f.label :"Local:", :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.text_field :local, :size => 40, :class => 'form-control'  %>
+    </div>
+  </div>
+  
+  <div class="field form-group">
+    <%= f.label :"Unidade:", :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.text_field :unidade, :size => 40, :class => 'form-control'  %>
+    </div>
+  </div>
+  
+  <div class="field form-group">
+    <%= f.label :"Projeto:", :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.text_field :projeto, :size => 40, :class => 'form-control'  %>
+    </div>
+  </div>
+  
+  <div class="field form-group">
+    <%= f.label :"Responsável:", :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.text_field :responsavel, :size => 40, :class => 'form-control'  %>
+    </div>
+  </div>
+  
+  <div class="field form-group">
+    <%= f.label :"Beneficiários:", :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+    <%= f.text_field :beneficiarios, :size => 40, :class => 'form-control'  %>
+    </div>
+  </div>
+  
+
+<%= hidden_field_tag 'step_commit', '' %>
+  <span style="float:left;">
+    <br>
+    <br>
+    <%=submit_tag 'Cancelar', :name=>'cancel', :onclick=>"javascript:location.href='/';return false;" %>
+    <%=submit_tag 'Salvar', :name=>'exit', :onclick=>"javascript:$('step_commit').value='exit';"  %>
+  </span>
+</form>
+  <% end %>
+</div>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+  

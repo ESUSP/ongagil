@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :recebimentos
   get 'sessions/new'
 
   resources :projetos

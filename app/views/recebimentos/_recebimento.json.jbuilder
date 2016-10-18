@@ -1,0 +1,2 @@
+json.extract! recebimento, :id, :tipoRecebimento, :dataRecebimento, :local, :unidade, :projeto, :responsavel, :beneficiarios, :created_at, :updated_at
+json.url recebimento_url(recebimento, format: :json)
