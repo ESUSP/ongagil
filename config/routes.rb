@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
-  resources :recebimentos
-=======
   resources :atividades
   resources :ongs
->>>>>>> 36f288fee057b7dd2bb759e3d139b9343e8fc410
+  resources :recebimentos
   get 'sessions/new'
 
   resources :projetos
