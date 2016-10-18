@@ -32,8 +32,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :atucao %>
-    <%= f.text_field :atucao %>
+    <%= f.label :atuacao %>
+    <%= f.text_field :atuacao %>
   </div>
 
   <div class="field">
@@ -53,12 +53,12 @@
 
   <div class="field">
     <%= f.label :cargahoras %>
-    <%= f.text_field :cargahoras %>
+    <%= f.text_field :cargahoras, placeholder:'120 minutos', :data=>{:mask=> '120'} %>
   </div>
 
   <div class="field">
     <%= f.label :responsavelid %>
-    <%= f.number_field :responsavelid %>
+    <%= f.number_field :responsavelid, required: true%>
   </div>
 
   <div class="field">

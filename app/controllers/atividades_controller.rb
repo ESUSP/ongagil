@@ -69,6 +69,6 @@ class AtividadesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def atividade_params
-      params.require(:atividade).permit(:atividade, :situacao, :projeto, :projetoid, :atucao, :custo, :datainicio, :datefim, :cargahoras, :responsavelid, :responsavelnome, :decricao)
+      params.require(:atividade).permit(:atividade, :situacao, :projeto, :projetoid, :atuacao, :custo, :datainicio, :datefim, :cargahoras, :responsavelid, :responsavelnome, :decricao)
     end
 end
