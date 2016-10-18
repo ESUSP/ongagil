@@ -18,6 +18,21 @@ RSpec.describe UsuariosController, type: :controller do
 
   # Sessão vazia para cadastrar usuário
   let(:valid_session) { {} }
+  let(:valid_session_admin) { 
+       @uadmin =  create(:usuario_admin)
+       session[:id] = Usuario.all.find_by(email: @uadmin.email)
+       session
+  }
+
+  describe "GET #index" do
+    context "com parâmetros validos" do
+      it "lista usuários em @usuarios" do
+        create(:usuario_aleatorio)
+        get :index, params: {}, session: valid_session_admin
+        expect(assigns(:usuarios).count).to be >= 1
+      end
+    end
+  end
 
   describe "GET #new" do
     it "cria um novo usuario como @usuario" do
@@ -29,7 +44,6 @@ RSpec.describe UsuariosController, type: :controller do
   describe "POST #create" do
     context "com parâmetros validos" do
       it "cria um novo Usuario" do
-      	#byebug
         expect {
           post :create, params: {usuario: valid_attributes}, session: valid_session
         }.to change(Usuario, :count).by(1)

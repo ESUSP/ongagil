@@ -41,6 +41,13 @@ FactoryGirl.define do
     password_confirmation rpwd
   end
 
+  factory :usuario_admin, class: Usuario do
+    email 'admin@admin.com'
+    nome 'Usuario Administrador'
+    password '12345'
+    password_confirmation '12345'
+  end
+
   factory :usuario, aliases: [:usuario_valido] do
     email "teste@teste.com"
     nome "teste"
@@ -53,5 +60,7 @@ FactoryGirl.define do
   	password "123456"
   	password_confirmation "123456"
   end
+
+
 
 end
