@@ -83,7 +83,6 @@ ActiveRecord::Schema.define(version: 20161018042432) do
   end
 
   create_table "projetos", force: :cascade do |t|
-    t.integer  "ProjetoID"
     t.string   "Status"
     t.string   "Projeto"
     t.string   "Tipo"
