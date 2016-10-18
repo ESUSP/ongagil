@@ -1,11 +1,12 @@
 class UsuariosController < ApplicationController
   skip_before_action :ensure_login, only: [:new, :create]
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
-  
+
   # GET /usuarios
   # GET /usuarios.json
   def index
-    @usuarios = Usuario.all
+    @usuarios = Usuario.pesquisar(params).paginate(:page => params[:page], :per_page => 10)
+    @upesq = Usuario.new
   end
 
   # GET /usuarios/1
@@ -20,7 +21,7 @@ class UsuariosController < ApplicationController
   def update
     respond_to do |format|
       if @usuario.update(usuario_params)
-        format.html { redirect_to @usuario, notice: 'Usuário foi atualizado com sucesso.' }
+        format.html { redirect_to @usuario, flash: {success: 'Dados do usuário atualizados com sucesso.'}}
         format.json { render :show, status: :ok, location: @usuario }
       else
         format.html { render :edit }
@@ -40,7 +41,7 @@ class UsuariosController < ApplicationController
 
     respond_to do |format|
       if @usuario.save
-        format.html { redirect_to @usuario, notice: 'Usuário registrado com sucesso.' }
+        format.html { redirect_to @usuario, flash: {success: 'Usuário registrado com sucesso.'} }
         format.json { render :show, status: :created, location: @usuario }
       else
         format.html { render :new }
@@ -54,7 +55,8 @@ class UsuariosController < ApplicationController
   def destroy
     @usuario.destroy
     respond_to do |format|
-      format.html { redirect_to usuario_url, notice: 'Usuário foi excluído com sucesso.' }
+      #flash[:success] = 'User was successfully created.'
+      format.html { redirect_to usuarios_url, flash: {success: 'Usuário foi excluído com sucesso.'} }
       format.json { head :no_content }
     end
   end

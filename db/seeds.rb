@@ -1,10 +1,27 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Usuario.destroy_all
 
-u1 = Usuario.create(email: 'admin@admin.com', nome:'Usuario Administrador', password:'12345', password_confirmation:'12345')
+#gerador de usuarios
+def genu i
+	def genrnd(tam, acc = '')
+		if (tam <= 0); acc;else; genrnd(tam-1,acc+rand(10).to_s);end
+	end
+	i.times{
+	rn = "#{genrnd(4)}"
+	rpwd = "#{genrnd(10)}"
+	rphone = "(#{genrnd(2)}) "+ #(DDD)
+	       "#{genrnd(5)}-#{genrnd(4)}"
+
+	Usuario.create(email: "spectest#{rn}@gmail.com",
+	                nome:"spectest#{rn}",
+	                endereco: "Rua spectest #{rn}",
+	                telefone:  rphone ,
+	                estado: "#{ListasPadrao::UF.sample}",
+	                cidade: "#{['São Paulo', 'São José dos Campos', 'Monte Verde'].sample}",
+	                ocultar: "#{[false,true].sample}",
+	                password: rpwd,
+	                password_confirmation: rpwd)}
+end
+
+defaultadmin = Usuario.create(email: 'admin@admin.com', nome:'Usuario Administrador', password:'12345', password_confirmation:'12345')
+genu(30)
 

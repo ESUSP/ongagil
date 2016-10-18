@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161015012037) do
+=======
+ActiveRecord::Schema.define(version: 20161018042432) do
+>>>>>>> 36f288fee057b7dd2bb759e3d139b9343e8fc410
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "atividades", force: :cascade do |t|
+    t.string   "atividade"
+    t.string   "situacao"
+    t.string   "projeto"
+    t.integer  "projetoid"
+    t.string   "atuacao"
+    t.decimal  "custo"
+    t.date     "datainicio"
+    t.date     "datefim"
+    t.decimal  "cargahoras"
+    t.integer  "responsavelid"
+    t.string   "responsavelnome"
+    t.text     "decricao"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "beneficiaries", force: :cascade do |t|
     t.string   "projeto"
@@ -51,7 +72,22 @@ ActiveRecord::Schema.define(version: 20161015012037) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ongs", force: :cascade do |t|
+    t.string   "nome"
+    t.string   "endereco"
+    t.string   "uf"
+    t.string   "cidade"
+    t.string   "telefone"
+    t.string   "email"
+    t.string   "site"
+    t.string   "cnpj"
+    t.string   "tipo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "projetos", force: :cascade do |t|
+    t.integer  "ProjetoID"
     t.string   "Status"
     t.string   "Projeto"
     t.string   "Tipo"

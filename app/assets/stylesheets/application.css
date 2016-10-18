@@ -13,9 +13,6 @@
  *= require_tree .
  *= require_self
  */
- 
- 
- .container-fluid {
-  width: 110%;
- }
- 
+
+ /*hack oficial para compensar o navbar fixed-top (doc bootstrap) %>*/
+ body { padding-top: 50px; }

@@ -28,7 +28,15 @@ gem 'selenium-webdriver', '~> 2.53'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+
 gem 'will_paginate', '~> 3.1.0'
+# Enable bootstrap renderer for will paginates
+gem 'will_paginate-bootstrap'
+# Enable text internationalization
+gem 'rails-i18n'
+# Auto format html and ruby files
+gem 'htmlbeautifier'
+
 gem 'launchy'
 
 # Use Redis adapter to run Action Cable in production
