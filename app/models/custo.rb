@@ -1,0 +1,2 @@
+class Custo < ApplicationRecord
+end

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Custos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Descricao</th>
+      <th>Data</th>
+      <th>Valor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @custos.each do |custo| %>
+      <tr>
+        <td><%= custo.tipo %></td>
+        <td><%= custo.descricao %></td>
+        <td><%= custo.data %></td>
+        <td><%= custo.valor %></td>
+        <td><%= link_to 'Show', custo %></td>
+        <td><%= link_to 'Edit', edit_custo_path(custo) %></td>
+        <td><%= link_to 'Destroy', custo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Custo', new_custo_path %>
