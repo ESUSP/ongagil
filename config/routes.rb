@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :atividades
   resources :ongs
   get 'sessions/new'
 

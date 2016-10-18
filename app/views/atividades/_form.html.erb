@@ -1,0 +1,77 @@
+<%= form_for(atividade) do |f| %>
+  <% if atividade.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(atividade.errors.count, "error") %> prohibited this atividade from being saved:</h2>
+
+      <ul>
+      <% atividade.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :atividade %>
+    <%= f.text_field :atividade %>
+  </div>
+
+  <div class="field">
+    <%= f.label :situacao %>
+    <%= f.text_field :situacao %>
+  </div>
+
+  <div class="field">
+    <%= f.label :projeto %>
+    <%= f.text_field :projeto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :projetoid %>
+    <%= f.number_field :projetoid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :atucao %>
+    <%= f.text_field :atucao %>
+  </div>
+
+  <div class="field">
+    <%= f.label :custo %>
+    <%= f.text_field :custo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :datainicio %>
+    <%= f.date_select :datainicio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :datefim %>
+    <%= f.date_select :datefim %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cargahoras %>
+    <%= f.text_field :cargahoras %>
+  </div>
+
+  <div class="field">
+    <%= f.label :responsavelid %>
+    <%= f.number_field :responsavelid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :responsavelnome %>
+    <%= f.text_field :responsavelnome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :decricao %>
+    <%= f.text_area :decricao %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
