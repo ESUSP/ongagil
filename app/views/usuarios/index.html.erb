@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="row">
-    <%= form_tag usuarios_path, method: 'get' do %>
+    <%= form_tag usuarios_path, method: 'get', enforce_utf8: false do %>
       <div class="table-responsive">
         <table class="table table-hover table-vert-align">
           <thead class="thead-default">
@@ -25,14 +25,15 @@
               <td><%= text_field_tag :email, params[:email], class: 'form-control' %></td>
               <td><%= text_field_tag :telefone, params[:telefone], class: 'form-control', type: 'tel' %></td>
               <td>
-              <button type="submit" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" name="submit"><i class="glyphicon glyphicon-search"></i> Pesquisar Usuário</button></td>
+                <button type="submit" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" name="submit"><i class="glyphicon glyphicon-search"></i> Pesquisar</button></td>
             </tr>
             <% @usuarios.each do |usuario| %>
               <tr>
                 <td><%= usuario.nome %></td>
                 <td><%= usuario.email %></td>
                 <td><%= usuario.telefone %></td>
-                <td><%= link_to raw('<span class="glyphicon glyphicon-pencil">'), edit_usuario_path(usuario), {class: 'btn btn-default', title: 'Alterar', 'data-toggle': 'tooltip', 'data-placement': 'bottom', 'role': 'button'} %> <%= link_to raw('<span class="glyphicon glyphicon-remove-sign"></span>'), usuario, {class: 'btn btn-default', title: 'Remover', 'data-toggle': 'tooltip', 'data-placement': 'bottom', 'role': 'button', method: :delete, data: { confirm: 'Tem certeza que deseja excluir o usuário?' }} %></td>
+                <td><%= link_to raw('<span class="glyphicon glyphicon-search"></span>'), usuario, {class: 'btn btn-default', title: 'Consultar', 'data-toggle': 'tooltip', 'data-placement': 'bottom', 'role': 'button'} %>
+                <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span>'), edit_usuario_path(usuario), {class: 'btn btn-default', title: 'Alterar', 'data-toggle': 'tooltip', 'data-placement': 'bottom', 'role': 'button'} %> <%= link_to raw('<span class="glyphicon glyphicon-remove-sign"></span>'), usuario, {class: 'btn btn-default', title: 'Remover', 'data-toggle': 'tooltip', 'data-placement': 'bottom', 'role': 'button', method: :delete, data: { confirm: 'Tem certeza que deseja excluir o usuário?' }} %></td>
               </tr>
             <% end %>
           </tbody>
@@ -51,5 +52,12 @@
       </div>
     </div>
     <script>
-      $("[role=button]").tooltip();
+      var ready = function ()
+          {
+            $("[role=button]").tooltip();
+          };
+      
+      
+            $(document).ready(ready);
+            $(document).on('page:load', ready);
     </script>

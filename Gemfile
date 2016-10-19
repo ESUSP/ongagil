@@ -20,6 +20,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-ui-rails'
 gem 'jquery-rails', '~> 4.1'
 gem 'jquery-datatables-rails'
+
 gem 'cucumber', '~> 2.3', '>= 2.3.3'
 gem 'capybara', '~> 2.7', '>= 2.7.1'
 gem 'selenium-webdriver', '~> 2.53'

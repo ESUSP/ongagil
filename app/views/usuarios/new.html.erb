@@ -1,112 +1,105 @@
 <div class="container">
-<div class="container">
-	<div class="row m-bt-30">
-	<div class="modal-content">
-    <div class="modal-header">
-		<a href="/usuarios"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button></a>
-		<h4 class="modal-title">Pronto para se inscrever? Vamos criar uma conta de usuário!</h4>
-	</div>
-	<% #if @usuario.errors %>
-	<%= form_for @usuario, url: {action: "create"} do |usuario_form| %>
-		<div class="modal-body">
-			<% if @usuario.errors.any? %>
-			<div class="row">
-				<div class="col-sm-12">
-					<div class="form-group">
-				  		<div id="error_explanation">
-			    			<h4><%= pluralize(@usuario.errors.count, "erro") %> impediram a criação do usuário:</h4>
-			    			<ul>
-			    			<% console %>
-					    		<% @usuario.errors.messages.each do |campo,mensagem| %>
-					      		<li><%= mensagem[0] %></li>
-					    		<% end %>
-					    	</ul>
-				  		</div>
-					</div>
-				</div>
-			</div>
-			<% end %>
-			<div class="form-group">
-			    <label for="usuario_email">E-mail *</label>
-				<%= usuario_form.text_field :email, class: 'form-control', required: true, type: 'email' %>
-				<span class="help-block">Seu endereço de e-mail, que será utilizado para entrar no sistema.</span>
-			</div>
-			
-			<div class="row">
-				<div class="col-sm-12 col-md-10">			
-					<div class="form-group">
-						<label for="usuario_nome">Nome *</label>
-						<%= usuario_form.text_field :nome, class: 'form-control', required: true, type: 'text' %>
-						<span class="help-block">Seu nome, que será utilizado para identificá-lo para os colegas de projeto.</span>
-					</div>
-				</div>
-				<div class="col-sm-12 col-md-2">	
-					<div class="form-group checkbox">
-					<label for="usuario_hidden"></label>		
-						<%= usuario_form.check_box :ocultar%><label for="usuario_ocultar" title="Ocultar o nome para outros usuários.">Ocultar o nome?</label>
-					</div>
-				</div>
-			</div>
-
-			<div class="form-group">
-			 	<label for="userEmail">Endereço</label>
-				<%= usuario_form.text_field :endereco, class: 'form-control', required: false, type: 'text' %>
-				<span class="help-block">Seu endereço para informar colegas de projeto. Não utilizaremos seu endereço.</span>
-			</div>
-
-			<div class="form-group">
-			 	<label for="userEmail">Telefone</label>
-				<%= usuario_form.text_field :telefone, class: 'form-control', required: false, type: 'tel' %>
-				<span class="help-block">Seu telefone para informar colegas de projeto. Não utilizaremos seu telefone.</span>
-			</div>
-
-			<div class="row">
-				<div class="col-sm-12 col-md-10">
-					<div class="form-group">
-					 	<label for="usuario_cidade">Cidade</label>
-						<%= usuario_form.text_field :cidade, class: 'form-control', required: false, type: 'text' %>
-					</div>
-				</div>
-				<div class="col-sm-12 col-md-2">
-					<div class="form-group">
-					 	<label for="usuario_estado">Estado</label>
-					 	<%= usuario_form.collection_select :estado, ListasPadrao::UF, :to_str, :to_str, {include_blank: true}, 
+  <div class="container">
+    <div class="row m-bt-30">
+      <div class="modal-content">
+        <div class="modal-header">
+          <a href="/usuarios"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button></a>
+          <h4 class="modal-title">Pronto para se inscrever? Vamos criar uma conta de usuário!</h4>
+        </div>
+        <% #if @usuario.errors %>
+        <%= form_for @usuario, url: {action: "create"} do |usuario_form| %>
+          <div class="modal-body">
+            <% if @usuario.errors.any? %>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <div id="error_explanation">
+                      <h4><%= pluralize(@usuario.errors.count, "erro") %> impediram a criação do usuário:</h4>
+                      <ul>
+                        <% console %>
+                        <% @usuario.errors.messages.each do |campo,mensagem| %>
+                          <li><%= mensagem[0] %></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+            <div class="form-group">
+              <label for="usuario_email">E-mail *</label>
+              <%= usuario_form.text_field :email, class: 'form-control', required: true, type: 'email' %>
+              <span class="help-block">Seu endereço de e-mail, que será utilizado para entrar no sistema.</span>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-10">
+                <div class="form-group">
+                  <label for="usuario_nome">Nome *</label>
+                  <%= usuario_form.text_field :nome, class: 'form-control', required: true, type: 'text' %>
+                  <span class="help-block">Seu nome, que será utilizado para identificá-lo para os colegas de projeto.</span>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-2">
+                <div class="form-group checkbox">
+                  <label for="usuario_hidden"></label>
+                  <%= usuario_form.check_box :ocultar%><label for="usuario_ocultar" title="Ocultar o nome para outros usuários.">Ocultar o nome?</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="userEmail">Endereço</label>
+              <%= usuario_form.text_field :endereco, class: 'form-control', required: false, type: 'text' %>
+              <span class="help-block">Seu endereço para informar colegas de projeto. Não utilizaremos seu endereço.</span>
+            </div>
+            <div class="form-group">
+              <label for="userEmail">Telefone</label>
+              <%= usuario_form.text_field :telefone, class: 'form-control', required: false, type: 'tel' %>
+              <span class="help-block">Seu telefone para informar colegas de projeto. Não utilizaremos seu telefone.</span>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-10">
+                <div class="form-group">
+                  <label for="usuario_cidade">Cidade</label>
+                  <%= usuario_form.text_field :cidade, class: 'form-control', required: false, type: 'text' %>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-2">
+                <div class="form-group">
+                  <label for="usuario_estado">Estado</label>
+                  <%= usuario_form.collection_select :estado, ListasPadrao::UF, :to_str, :to_str, {include_blank: true}, 
 					 										{class: 'form-control'} %>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-sm-12 col-md-6">
-					<div class="form-group">
-						<label for="password">Senha *</label>
-						<%= usuario_form.text_field :password, class: 'form-control', required: true, type: 'password' %>
-						<span class="help-block">Digite uma senha para sua nova conta.</span>
-					</div>
-				</div>		
-  				<div class="col-sm-12 col-md-6">
-					<div class="form-group">
-						<label for="password_confirmation">Repita a Senha *</label>
-						<%= usuario_form.text_field :password_confirmation, class: 'form-control', required: true, type: 'password' %>
-						<span class="help-block">Digite a senha novamente. Senhas devem coincidir.</span>
-					</div>
-				</div>	
-  			</div>
-			<div class="row">
-				<div class="col-sm-12 termo_uso">
-  					<div class="form-group checkbox">
-  						<%= usuario_form.check_box :termos_de_uso%>
-  						<label for="usuario_termos_de_uso">Eu li e concordo com os 
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label for="password">Senha *</label>
+                  <%= usuario_form.text_field :password, class: 'form-control', required: true, type: 'password' %>
+                  <span class="help-block">Digite uma senha para sua nova conta.</span>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label for="password_confirmation">Repita a Senha *</label>
+                  <%= usuario_form.text_field :password_confirmation, class: 'form-control', required: true, type: 'password' %>
+                  <span class="help-block">Digite a senha novamente. Senhas devem coincidir.</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 termo_uso">
+                <div class="form-group checkbox">
+                  <%= usuario_form.check_box :termos_de_uso, include_hidden: false%>
+                  <label for="usuario_termos_de_uso">Eu li e concordo com os 
   						<%= link_to 'termos de serviço', '/politica/termos-de-servico', target: '_blank' %>.</label>
-  					</div>
-  				</div>
-  			</div>
-  		</div>
-
-  		<div class="modal-footer">
-			<input type="hidden" name="isEmpty" value="">
-			<button type="input" id="registrar" name="submit" value="newAccount" class="btn btn-success btn-icon"><i class="fa fa-check"></i> Registrar</button>
-			<a href="/usuarios"><button type="button" class="btn btn-default btn-icon" data-dismiss="modal"><i class="fa fa-times-circle"></i> Cancelar</button></a>
-		</div>
- 
-	<% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="hidden" name="isEmpty" value="">
+            <button type="submit" id="registrar" name="submit" value="newAccount" class="btn btn-success btn-icon"><i class="fa fa-check"></i> Registrar</button>
+            <a href="/usuarios"><button type="button" class="btn btn-default btn-icon" data-dismiss="modal"><i class="fa fa-times-circle"></i> Cancelar</button></a>
+          </div>
+        <% end %>

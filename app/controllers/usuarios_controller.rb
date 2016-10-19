@@ -12,12 +12,14 @@ class UsuariosController < ApplicationController
   # GET /usuarios/1
   # GET /usuarios/1.json
   def show
+
   end
 
   def new
     @usuario = Usuario.new
   end
 
+  # PUT /usuarios/:id
   def update
     respond_to do |format|
       if @usuario.update(usuario_params)
@@ -30,7 +32,7 @@ class UsuariosController < ApplicationController
     end
   end
 
- # GET /usuarios/1/edit
+  # GET /usuarios/1/edit
   def edit
   end
 

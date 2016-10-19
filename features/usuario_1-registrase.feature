@@ -6,11 +6,11 @@ Para poder utilizar o serviço
 
 Scenario: Usuario Acessa Registrar-se
 When Eu acesso a pagina de registro
-Then Eu devo ver um fómulário
+Then Eu devo ver o fómulário registrar
 
 Scenario: Usuario Preenche Registrar-se
 When Eu acesso a pagina de registro
-And Eu preencho o formulário com os seguintes atributos:
+And Eu preencho o formulário registrar com os seguintes atributos:
 	|usuario_email    		  		| jeanadam@gmail.com   	|
 	|usuario_nome   		  		| Jean Adam Calixto 	|
 	|usuario_password    			| 12345					|

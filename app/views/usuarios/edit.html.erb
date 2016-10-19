@@ -1,6 +1,81 @@
-<h1>Editing Car</h1>
-
-<%= render 'new' %>
-
-<%= link_to 'Show', @usuario %> |
-<%= link_to 'Back', usuarios_path %>
+<div class="container">
+  <div class="row m-bt-30">
+    <div class="col-xs-12">
+      <h1>Alteração do usuário: <%= @usuario.id %></h1>
+    </div>
+  </div>
+  <%= form_for @usuario, method: :put do |usuario_form| %>
+    <% if @usuario.errors.any? %>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <div id="error_explanation">
+              <h4><%= pluralize(@usuario.errors.count, "erro") %> impediram a criação do usuário:</h4>
+              <ul>
+                <% console %>
+                <% @usuario.errors.messages.each do |campo,mensagem| %>
+                  <li><%= mensagem[0] %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <div class="form-group">
+      <label for="usuario_email">E-mail *</label>
+      <%= usuario_form.text_field :email, class: 'form-control', required: true, type: 'email' %>
+      <span class="help-block">Seu endereço de e-mail, que será utilizado para entrar no sistema.</span>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-10">
+        <div class="form-group">
+          <label for="usuario_nome">Nome *</label>
+          <%= usuario_form.text_field :nome, class: 'form-control', required: true, type: 'text' %>
+          <span class="help-block">Seu nome, que será utilizado para identificá-lo para os colegas de projeto.</span>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-2">
+        <div class="form-group checkbox">
+          <label for="usuario_hidden"></label>
+          <%= usuario_form.check_box :ocultar%><label for="usuario_ocultar" title="Ocultar o nome para outros usuários.">Ocultar o nome?</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="userEmail">Endereço</label>
+      <%= usuario_form.text_field :endereco, class: 'form-control', required: false, type: 'text' %>
+      <span class="help-block">Seu endereço para informar colegas de projeto. Não utilizaremos seu endereço.</span>
+    </div>
+    <div class="form-group">
+      <label for="userEmail">Telefone</label>
+      <%= usuario_form.text_field :telefone, class: 'form-control', required: false, type: 'tel' %>
+      <span class="help-block">Seu telefone para informar colegas de projeto. Não utilizaremos seu telefone.</span>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-10">
+        <div class="form-group">
+          <label for="usuario_cidade">Cidade</label>
+          <%= usuario_form.text_field :cidade, class: 'form-control', required: false, type: 'text' %>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-2">
+        <div class="form-group">
+          <label for="usuario_estado">Estado</label>
+          <%= usuario_form.collection_select :estado, ListasPadrao::UF, :to_str, :to_str, {include_blank: true}, 
+                              {class: 'form-control'} %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 m-b-30">
+        <div class="pull-right">
+          <%= button_tag type: :submit, class: 'btn btn-success' do %>
+            <i class="glyphicon glyphicon-ok"></i> Alterar 
+            <% end %>
+          <%= link_to raw('<span class="glyphicon glyphicon-remove-sign"></span> Cancelar'), usuarios_path, {class: 'btn btn-default', 'role': 'button'} %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

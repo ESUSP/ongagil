@@ -9,12 +9,12 @@ class Usuario < ApplicationRecord
   validates :password,
     presence: {message: 'Campo obrigatório.'},
     length: { minimum: 5, maximum: 40, message: 'Senha deve ter no mínimo 5 e no máximo 40 caracteres'},
-    confirmation: {message: 'A senha repetida não confere.'}
+    confirmation: {message: 'A senha repetida não confere.'},
+    on: :create
 
   validates :termos_de_uso,
-    acceptance: {message: 'É necessário aceitar os termos de serviço.'}
-
-
+    acceptance: {message: 'É necessário aceitar os termos de serviço.'},
+    on: :create
 
   def self.pesquisar(phash)
     if phash[:nome] || phash[:email] || phash[:telefone]

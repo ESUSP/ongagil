@@ -6,10 +6,6 @@ Then(/^[Ee]u devo ver um fómulário$/) do
   expect(page).to have_content("Cadastrar Projeto")
 end
 
-When /^[Ee]u clico em (.*)$/ do |button|
-  click_button button
-end
-
 When /^[Ee]u pression $/ do |button|
   click_button button
 end
