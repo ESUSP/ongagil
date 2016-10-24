@@ -28,10 +28,10 @@
       Área: <%= @projeto.Area %>
     </h4>
     <h4>
-      Início: <%= @projeto.DataInicio %>      
+      Início: <%= @projeto.DataInicio.strftime("%d/%m/%y") %>      
     </h4>
     <h4>
-      Término: <%= @projeto.DataFim %>       
+      Término: <%= @projeto.DataFim.strftime("%d/%m/%y") %>       
     </h4>
     <hr>
     <h4>

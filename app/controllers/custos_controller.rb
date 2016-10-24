@@ -1,8 +1,8 @@
 class CustosController < ApplicationController
   before_action :set_custo, only: [:show, :edit, :update, :destroy]
 
-  # GET /custos
-  # GET /custos.json
+  # GET /atividades/custos
+  # GET /atividades/custos.json
   def index
     @custos = Custo.all
   end

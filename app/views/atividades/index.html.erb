@@ -30,8 +30,8 @@
         <td><%= atividade.projetoid %></td>
         <td><%= atividade.atuacao %></td>
         <td><%= atividade.custo %></td>
-        <td><%= atividade.datainicio %></td>
-        <td><%= atividade.datefim %></td>
+        <td><%= atividade.datainicio.strftime("%d/%m/%y") %></td>
+        <td><%= atividade.datefim.strftime("%d/%m/%y") %></td>
         <td><%= atividade.cargahoras %></td>
         <td><%= atividade.responsavelid %></td>
         <td><%= atividade.responsavelnome %></td>
