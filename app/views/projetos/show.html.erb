@@ -1,60 +1,104 @@
+
+<br>
+  
+  
+<ol class="breadcrumb">
+  <li>
+  <%= link_to 'Projetos', projetos_path, class:"btn btn-link" %>
+  </li>  
+  <li class="active"><%= @projeto.Projeto %></li>
+</ol>
+  
+  
+<div class="container">
+  
 <p id="notice"><%= notice %></p>
 
-
-<p>
-  <strong>Status:</strong>
-  <%= @projeto.Status %>
-</p>
-
-<p>
-  <strong>Projeto:</strong>
-  <%= @projeto.Projeto %>
-</p>
-
-<p>
-  <strong>Tipo:</strong>
-  <%= @projeto.Tipo %>
-</p>
-
-<p>
-  <strong>Area:</strong>
-  <%= @projeto.Area %>
-</p>
-
-<p>
-  <strong>Datainicio:</strong>
-  <%= @projeto.DataInicio %>
-</p>
-
-<p>
-  <strong>Datafim:</strong>
-  <%= @projeto.DataFim %>
-</p>
-
-<p>
-  <strong>Ongnumero:</strong>
-  <%= @projeto.OngNumero %>
-</p>
-
-<p>
-  <strong>Ong:</strong>
-  <%= @projeto.Ong %>
-</p>
-
-<p>
-  <strong>Respnumero:</strong>
-  <%= @projeto.RespNumero %>
-</p>
-
-<p>
-  <strong>Respnome:</strong>
-  <%= @projeto.RespNome %>
-</p>
-
-<p>
-  <strong>Descricaoprojeto:</strong>
-  <%= @projeto.DescricaoProjeto %>
-</p>
+<div class="row">
+  <div class="col-md-4">
+    <p><%= @projeto.DescricaoProjeto %></p>
+    <h4>
+      Status:
+      <%= @projeto.Status %>
+    </h4>
+    <h4>
+        Tipo: <%= @projeto.Tipo %>      
+    </h4>
+    <h4>
+      Área: <%= @projeto.Area %>
+    </h4>
+    <h4>
+      Início: <%= @projeto.DataInicio %>      
+    </h4>
+    <h4>
+      Término: <%= @projeto.DataFim %>       
+    </h4>
+    <hr>
+    <h4>
+      ONG: <%= @projeto.Ong %>      
+    </h4>
+    <h4>
+      Gestor Responsável: <%= @projeto.RespNome %>
+    </h4>
+  </div>  
+  <div class="col-md-4">
+    Atividades:
+    <table class="table table-hover">
+      <tr>
+      <th>Título</th>
+      <th>Data</th>
+      <th>Status</th>
+      </tr>
+      <tr>
+      <td>Cadastramento</td>
+      <td>24/10/2016</td>
+      <td>Em andamento</td>
+      </tr>
+    </table>
+    <br>
+    Custos:
+    <table class="table table-hover">
+      <tr>
+      <th>Título</th>
+      <th>Data</th>
+      <th>Valor</th>
+      </tr>
+      <tr>
+      <td>Refeições</td>
+      <td>24/10/2016</td>
+      <td>R$ 300,00</td>
+      </tr>
+      <tr>
+      <td>Materiais</td>
+      <td>24/10/2016</td>
+      <td>100cx de papel</td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-md-4">
+    Beneficiários:
+    <table class="table table-hover">
+      <tr>
+      <th>Nome</th>
+      <th>Local</th>
+      <th>Status</th>
+      </tr>
+      <tr>
+      <td>José Bonifácil</td>
+      <td>ZL</td>
+      <td>Ativo</td>
+      </tr>
+      <tr>
+      <td>Maria Conceição</td>
+      <td>Sorocaba</td>
+      <td>Ativo</td>
+      </tr>
+    </table>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_projeto_path(@projeto), class:"btn btn-default" %> |
 <%= link_to 'Back', projetos_path, class:"btn btn-default" %>
+  
+  
+</div>

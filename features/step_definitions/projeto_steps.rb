@@ -1,16 +1,16 @@
-When(/^[Ee]u acesso a p[a|á]gina de cadastro de projetos$/) do
+When(/^[Ee]u acesso a pagina de cadastro de projetos$/) do
   visit new_projeto_path
 end
 
-Then(/^[Ee]u devo ver um fómulário$/) do
-  expect(page).to have_content("Cadastrar Projeto")
+Then(/^[Ee]u devo ver o fómulário de cadastro$/) do
+  expect(page).to have_content("Cadastrar Novo Projeto")
 end
 
-When /^[Ee]u pression $/ do |button|
+When /^[Ee]u pressiono o botão (.*)$/ do |button|
   click_button button
 end
 
-When /^Eu preencho o formulário com os seguintes atributos:$/ do |table|
+When /^Eu preencho o formulário de cadastro com os seguintes atributos:$/ do |table|	
   puts table.rows_hash
   criteria = table.rows_hash.each do |field, value|
     fill_in field, :with => value
