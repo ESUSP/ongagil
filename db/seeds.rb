@@ -53,3 +53,29 @@ Projeto.create(Projeto: "CriançaFeliz",
 									DataInicio: Date.today.at_beginning_of_month,
 									DataFim: Date.today.at_beginning_of_month.next_month)
 
+Atividade.destroy_all
+
+
+Atividade.create(
+				atividade: "Arrecadação de brinquedos",
+				projeto: "CriançaFeliz",
+				projetoid: 1 ,
+				situacao: "Em andamento",
+				atuacao: "Test",
+				datainicio: Date.today.at_beginning_of_day ,
+				datefim: Date.today.at_beginning_of_month.next_month ,
+				cargahoras: 10,
+				responsavelid: 2 ,
+				responsavelnome: "Usuário Test")
+
+Atividade.create(
+				atividade: "Cadastramento",
+				projeto: "Minha Casa Minha Vida #1",
+				projetoid: 1 ,
+				situacao: "Em andamento",
+				atuacao: "Test",
+				datainicio: Date.today.at_beginning_of_day ,
+				datefim: Date.today.at_beginning_of_month.next_month ,
+				cargahoras: 20,
+				responsavelid: 2 ,
+				responsavelnome: "Usuário Test")
