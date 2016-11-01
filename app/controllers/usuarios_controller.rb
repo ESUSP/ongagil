@@ -1,6 +1,7 @@
 class UsuariosController < ApplicationController
   skip_before_action :ensure_login, only: [:new, :create]
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
+  before_action :set_current_usuario, only: [:senha, :patch]
 
   # GET /usuarios
   # GET /usuarios.json
@@ -12,7 +13,32 @@ class UsuariosController < ApplicationController
   # GET /usuarios/1
   # GET /usuarios/1.json
   def show
+  end
 
+  # GET /usuarios/senha
+  def senha
+    @usuario = current_user
+  end
+
+  # PATCH /usuarios/:id
+  def patch
+    respond_to do |format|
+      #If changing password, check old password.
+      if (params[:usuario][:password].blank? || !@usuario.authenticate(params[:usuario][:old_password]))
+        @usuario.errors.add(:old_password, :invalid, message: "Senha antiga inválida")
+        format.html { render :senha }
+        format.json { render json: @usuario.errors, status: :unprocessable_entity }
+      else
+        #Else update entity
+        if @usuario.update(usuario_params)
+          format.html { redirect_to @usuario, flash: {success: 'Senha alterada com sucesso.'}}
+          format.json { render :show, status: :ok, location: @usuario }
+        else
+          format.html { render :edit }
+          format.json { render json: @usuario.errors, status: :unprocessable_entity }
+        end
+      end
+    end
   end
 
   def new
@@ -63,14 +89,21 @@ class UsuariosController < ApplicationController
     end
   end
 
+  #=====================================================
+  # PRIVATE METHODS
+  #=====================================================
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_usuario
-      @usuario = Usuario.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_usuario
+    @usuario = Usuario.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def usuario_params
-      params.require(:usuario).permit!
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def usuario_params
+    params.require(:usuario).permit!
+  end
+
+  def set_current_usuario
+    @usuario = current_user
+  end
 end

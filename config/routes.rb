@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   get '/beneficiaries/new', to: 'beneficiaries#new', as: 'beneficiaries_new'
   get '/beneficiaries/edit', to: 'beneficiaries#edit', as: 'beneficiaries_edit'
 
-  get '/registrar', to: 'usuarios#new'
+  get   '/registrar', to: 'usuarios#new'
+  get   '/usuarios/senha', to: 'usuarios#senha', as: 'usuarios_senha'
+  patch '/usuarios/senha', to: 'usuarios#patch', as: 'usuarios_patch_senha'
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

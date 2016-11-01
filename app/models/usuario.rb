@@ -1,4 +1,5 @@
 class Usuario < ApplicationRecord
+  attr_accessor :old_password
   has_secure_password
 
   validates :email,

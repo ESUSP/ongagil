@@ -23,6 +23,7 @@ def genu i
 end
 
 defaultadmin = Usuario.create(email: 'admin@admin.com', nome:'Usuario Administrador', password:'12345', password_confirmation:'12345')
+Usuario.create(email: 'jean@gmail.com', nome:'Jean Adam', password:'12345', password_confirmation:'12345')
 genu(30)
 
 
