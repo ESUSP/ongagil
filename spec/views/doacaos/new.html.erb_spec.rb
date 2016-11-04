@@ -1,3 +1,4 @@
+=begin
 require 'rails_helper'
 
 RSpec.describe "doacaos/new", type: :view do
@@ -34,3 +35,4 @@ RSpec.describe "doacaos/new", type: :view do
     end
   end
 end
+=end
