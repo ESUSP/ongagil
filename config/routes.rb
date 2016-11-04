@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :doacaos
   resources :custos
   resources :atividades
   resources :ongs

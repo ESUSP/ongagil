@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @doacao.data %>
+</p>
+
+<p>
+  <strong>Doador:</strong>
+  <%= @doacao.doador.nome %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @doacao.tipo %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @doacao.valor %>
+</p>
+
+<p>
+  <strong>Pago:</strong>
+  <%= @doacao.pago %>
+</p>
+
+<p>
+  <strong>Forma:</strong>
+  <%= @doacao.forma %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @doacao.descricao %>
+</p>
+
+<p>
+  <strong>Observacao:</strong>
+  <%= @doacao.observacao %>
+</p>
+
+<%= link_to 'Editar', edit_doacao_path(@doacao) %> |
+<%= link_to 'Voltar', doacaos_path %>

@@ -1,0 +1,108 @@
+<%= form_for(doacao) do |f| %>
+  <% if doacao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(doacao.errors.count, "error") %> prohibited this doacao from being saved:</h2>
+
+      <ul>
+      <% doacao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <form class="user-form form-horizontal" role="form">
+      
+  <br>
+
+  <div class="field form-group">
+    <%= f.label "Data*", :class => 'control-label col-sm-3' %>
+    <div class="col-sm-9">
+      <%= f.date_field :data, required: true %>
+    </div>
+  </div>
+  
+  <br></br>
+
+  <div class="field form-group">
+    <%= f.label "Doador*", :class => 'control-label col-sm-3' %>
+    <div class="col-sm-8">
+      <%= f.collection_select(:doador_id, Doador.all, :id, :nome, prompt: true, include_blank: "anônimo") %>
+    </div>
+  </div>
+
+  <br></br>
+
+  <div class="field form-group">
+    <%= f.label "Tipo de Doação*", :class => 'control-label col-sm-3' %>
+    <div class="col-sm-8">
+      <%= f.select :tipo, ['dinheiro', 'bens materiais', 'espaço para uso', 'custeio de transporte', 'custeio de alimentação', 'outro'], :class =>  'form-control', required: true %>
+    </div>
+  </div>
+  
+  <br></br>
+
+  <div class="field form-group">
+    <%= f.label "Valor da Doação", :class => 'control-label col-sm-3' %>
+    <div class="col-sm-8">
+      <%= f.text_field :valor, placeholder: 'XXX.XXX.XX', :data => {:mask=> '999.999,00'}, required: true %>
+    </div>
+  </div>
+  
+  <br></br>
+
+  <div class="field form-group">
+    <%= f.label "Pago ?", :class => 'control-label col-sm-3'%>
+    <div class="col-sm-8">
+      <%= f.select :pago, ['Sim', 'Não'], :class =>  'form-control' %>
+    </div>
+  </div>
+  
+  <br></br>
+
+  <div class="field form-group">
+    <%= f.label "Forma de Pagamento", :class => 'control-label col-sm-3' %>
+    <div class="col-sm-8">
+      <%= f.select :forma, ['Boleto', 'Transferência'], :class =>  'form-control'%>
+    </div>
+  </div>
+  
+  <br></br>
+
+  <div class="field form-group">
+    <%= f.label "Descrição:", :class => 'control-label col-sm-3' %>
+    <div class="col-sm-8">
+      <%= f.text_area :descricao %>
+    </div>
+  </div>
+  
+<br></br>
+<br></br>
+
+  <div class="field form-group">
+    <%= f.label "Observação", :class => 'control-label col-sm-3' %>
+    <div class="col-sm-8">
+      <%= f.text_area :observacao %>
+    </div>
+  </div>
+
+<br></br>
+<br></br>
+
+  <div class="actions text-center">
+    <b>
+    <div class=" col-sm-offset-3 col-sm-2">
+      <p>
+        <%= button_tag "Limpar", type: :reset %>
+      </p>
+    </div>
+    <div class="col-sm-3">
+      <p>
+        <%= f.submit "Salvar/Incluir" %>
+      </p>
+    </div>
+    </b>
+  </div>
+
+  </form>
+<% end %>
