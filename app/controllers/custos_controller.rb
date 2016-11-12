@@ -10,6 +10,7 @@ class CustosController < ApplicationController
   # GET /custos/1
   # GET /custos/1.json
   def show
+    @projeto = Projeto.first()
   end
 
   # GET /custos/new
@@ -19,6 +20,7 @@ class CustosController < ApplicationController
 
   # GET /custos/1/edit
   def edit
+    @projeto = Projeto.first()
   end
 
   # POST /custos

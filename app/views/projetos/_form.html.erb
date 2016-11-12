@@ -1,7 +1,5 @@
 <%= form_for(projeto) do |f| %>
 
-<div class="row">
-  <div class="col-xs-8">
     
   <% if projeto.errors.any? %>
     <div id="error_explanation" class="alert alert-danger has-error">
@@ -72,12 +70,9 @@
 
 
 
-
-
   <div class="actions">
     <%= f.submit :Enviar, class:"btn btn-success" %>
-  </div>
+  
     
-  </div><!-- col and row -->  
-</div>
+
 <% end %>

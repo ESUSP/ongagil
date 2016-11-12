@@ -19,6 +19,7 @@ class AtividadesController < ApplicationController
 
   # GET /atividades/1/edit
   def edit
+    @projeto = Projeto.first()
   end
 
   # POST /atividades

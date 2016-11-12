@@ -1,3 +1,14 @@
+<br>
+  
+  
+<ol class="breadcrumb">
+  <li>
+  <%= link_to 'Projetos', projetos_path, class:"btn btn-link" %>
+  </li>  
+  
+  <li class="active"> Custo: <%= @custo.tipo %> </li>
+</ol>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -20,5 +31,6 @@
   <%= @custo.valor %>
 </p>
 
-<%= link_to 'Edit', edit_custo_path(@custo) %> |
-<%= link_to 'Back', custos_path %>
+<%= link_to 'Editar', edit_custo_path(@custo) %> |
+<%= link_to 'Projeto', @projeto %> |
+<%= link_to 'Listagem', custos_path %>

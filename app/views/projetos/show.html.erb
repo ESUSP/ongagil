@@ -56,24 +56,35 @@
       </tr>
     </table>
     <br>
-    Custos:
+    Custos (<%= link_to 'Novo Custo', new_custo_path %> ):
     <table class="table table-hover">
-      <tr>
-      <th>Título</th>
-      <th>Data</th>
+
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Descrição</th>
       <th>Valor</th>
-      </tr>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @custos.each do |custo| %>
       <tr>
-      <td>Refeições</td>
-      <td>24/10/2016</td>
-      <td>R$ 300,00</td>
+        <td><%= link_to custo.tipo, edit_custo_path(custo) %></td>
+        <td><%= custo.descricao %></td>
+        <td><%= custo.data %></td>
+        <td><%= custo.valor %></td>
+        <td><%= link_to 'Excluir', custo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-      <tr>
-      <td>Materiais</td>
-      <td>24/10/2016</td>
-      <td>100cx de papel</td>
-      </tr>
-    </table>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+      
   </div>
   <div class="col-md-4">
     Beneficiários:
@@ -97,8 +108,8 @@
   </div>
 </div>
 
-<%= link_to 'Edit', edit_projeto_path(@projeto), class:"btn btn-default" %> |
-<%= link_to 'Back', projetos_path, class:"btn btn-default" %>
+<%= link_to 'Editar', edit_projeto_path(@projeto), class:"btn btn-default" %> |
+<%= link_to 'Listagem', projetos_path, class:"btn btn-default" %>
   
   
 </div>

@@ -10,6 +10,7 @@ class ProjetosController < ApplicationController
   # GET /projetos/1
   # GET /projetos/1.json
   def show
+    @custos = Custo.all
   end
 
   # GET /projetos/new
