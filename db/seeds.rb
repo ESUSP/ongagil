@@ -80,3 +80,24 @@ Atividade.create(
 				cargahoras: 20,
 				responsavelid: 2 ,
 				responsavelnome: "Usuário Test")
+
+Custo.create(
+			tipo: "Cestas Básicas",
+      descricao: "Compra de Cestas Básicas",
+      data: Date.today.at_beginning_of_month.last_month,
+      valor: 2000.00
+)
+
+Custo.create(
+			tipo: "Material de Escritório",
+      descricao: "Compra de Material de Escritório para Cadastramento",
+      data: Date.today.at_beginning_of_month.last_month,
+      valor: 3300.00
+)
+
+Custo.create(
+			tipo: "Transporte",
+      descricao: "Transporte de beneficiários para um lugar qualquer",
+      data: Date.today.at_beginning_of_month.last_week,
+      valor: 4030.00
+)
