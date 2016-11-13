@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
 
   def create
     usuario = Usuario.find_by(email: params[:usuario][:email].downcase)
-    byebug
     if usuario && usuario.authenticate(params[:usuario][:password])
       log_in usuario
       redirect_to root_path #posteriormente deve ir para /dashboard
