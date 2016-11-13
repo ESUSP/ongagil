@@ -4,7 +4,8 @@ class OngsController < ApplicationController
   # GET /ongs
   # GET /ongs.json
   def index
-    @ongs = Ong.all
+    ##@ongs = Ong.all
+    @ongs = current_user.ongs.all
   end
 
   # GET /ongs/1
@@ -14,7 +15,8 @@ class OngsController < ApplicationController
 
   # GET /ongs/new
   def new
-    @ong = Ong.new
+    ##@ong = Ong.new
+    @ong = current_user.ongs.new
   end
 
   # GET /ongs/1/edit
@@ -24,7 +26,8 @@ class OngsController < ApplicationController
   # POST /ongs
   # POST /ongs.json
   def create
-    @ong = Ong.new(ong_params)
+    ##@ong = Ong.new(ong_params)
+    @ong = current_user.ongs.new(ong_params)
 
     respond_to do |format|
       if @ong.save
@@ -64,7 +67,8 @@ class OngsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ong
-      @ong = Ong.find(params[:id])
+      #@ong = Ong.find(params[:id])
+      @ong = current_user.ongs.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -4,4 +4,8 @@ class Ong < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
+
+  belongs_to :usuario
+  #	has_many :projetos, dependent: :destroy
+  # has_many :doacoes, dependent: destroy
 end

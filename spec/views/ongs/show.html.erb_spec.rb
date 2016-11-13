@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe "ongs/show", type: :view do
   before(:each) do
-    @ong = assign(:ong, Ong.create!(
+     @user = create(:usuario_aleatorio)
+     
+      @ong = assign(:ong, @user.ongs.create!(
+    #@ong = assign(:ong, Ong.create!(
       :nome => "Nome",
       :endereco => "Endereco",
       :uf => "Uf",

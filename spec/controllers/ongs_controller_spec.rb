@@ -31,38 +31,57 @@ RSpec.describe OngsController, type: :controller do
     skip("Add a hash of attributes invalid for your model")
   }
 
+
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # OngsController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_session) {
+    @user = create(:usuario_aleatorio)
+    return session[:id] = @user.id
+  }
 
   describe "GET #index" do
     it "assigns all ongs as @ongs" do
-      ong = Ong.create! valid_attributes
-      get :index, params: {}, session: valid_session
+      @user = create(:usuario_aleatorio)
+      ong = @user.ongs.create! valid_attributes
+      session[:id] = @user.id
+      get :index, params: {}, session: session
+      #ong = Ong.create! valid_attributes
+      #get :index, params: {}, session: valid_session
       expect(assigns(:ongs)).to eq([ong])
     end
   end
 
   describe "GET #show" do
     it "assigns the requested ong as @ong" do
-      ong = Ong.create! valid_attributes
-      get :show, params: {id: ong.to_param}, session: valid_session
+      @user = create(:usuario_aleatorio)
+      ong = @user.ongs.create! valid_attributes
+      session[:id] = @user.id
+      get :show, params: {id: ong.to_param}, session: session
+      #ong = Ong.create! valid_attributes
+      #get :show, params: {id: ong.to_param}, session: valid_session
       expect(assigns(:ong)).to eq(ong)
     end
   end
 
   describe "GET #new" do
     it "assigns a new ong as @ong" do
-      get :new, params: {}, session: valid_session
+      @user = create(:usuario_aleatorio)
+      session[:id] = @user.id
+      get :new, params: {}, session: session
+      #get :new, params: {}, session: valid_session
       expect(assigns(:ong)).to be_a_new(Ong)
     end
   end
 
   describe "GET #edit" do
     it "assigns the requested ong as @ong" do
-      ong = Ong.create! valid_attributes
-      get :edit, params: {id: ong.to_param}, session: valid_session
+      @user = create(:usuario_aleatorio)
+      ong = @user.ongs.create! valid_attributes
+      session[:id] = @user.id
+      get :edit, params: {id: ong.to_param}, session: session
+      #ong = Ong.create! valid_attributes
+      #get :edit, params: {id: ong.to_param}, session: valid_session
       expect(assigns(:ong)).to eq(ong)
     end
   end
@@ -107,35 +126,55 @@ RSpec.describe OngsController, type: :controller do
       }
 
       it "updates the requested ong" do
-        ong = Ong.create! valid_attributes
-        put :update, params: {id: ong.to_param, ong: new_attributes}, session: valid_session
+        @user = create(:usuario_aleatorio)
+        session[:id] = @user.id
+        ong = @user.ongs.create! valid_attributes
+        put :update, params: {id: ong.to_param, ong: new_attributes}, session: session
+        #ong = Ong.create! valid_attributes
+        #put :update, params: {id: ong.to_param, ong: new_attributes}, session: valid_session
         ong.reload
         skip("Add assertions for updated state")
       end
 
       it "assigns the requested ong as @ong" do
-        ong = Ong.create! valid_attributes
-        put :update, params: {id: ong.to_param, ong: valid_attributes}, session: valid_session
+        @user = create(:usuario_aleatorio)
+        session[:id] = @user.id
+        ong = @user.ongs.create! valid_attributes
+        put :update, params: {id: ong.to_param, ong: valid_attributes}, session: session
+        #ong = Ong.create! valid_attributes
+        #put :update, params: {id: ong.to_param, ong: valid_attributes}, session: valid_session
         expect(assigns(:ong)).to eq(ong)
       end
 
       it "redirects to the ong" do
-        ong = Ong.create! valid_attributes
-        put :update, params: {id: ong.to_param, ong: valid_attributes}, session: valid_session
+        @user = create(:usuario_aleatorio)
+        session[:id] = @user.id
+        ong = @user.ongs.create! valid_attributes
+        put :update, params: {id: ong.to_param, ong: valid_attributes}, session: session
+        #ong = Ong.create! valid_attributes
+        #put :update, params: {id: ong.to_param, ong: valid_attributes}, session: valid_session
         expect(response).to redirect_to(ong)
       end
     end
 
     context "with invalid params" do
       it "assigns the ong as @ong" do
-        ong = Ong.create! valid_attributes
-        put :update, params: {id: ong.to_param, ong: invalid_attributes}, session: valid_session
+        @user = create(:usuario_aleatorio)
+        session[:id] = @user.id
+        ong = @user.ongs.create! valid_attributes
+        put :update, params: {id: ong.to_param, ong: invalid_attributes}, session: session
+        #ong = Ong.create! valid_attributes
+        #put :update, params: {id: ong.to_param, ong: invalid_attributes}, session: valid_session
         expect(assigns(:ong)).to eq(ong)
       end
 
       it "re-renders the 'edit' template" do
-        ong = Ong.create! valid_attributes
-        put :update, params: {id: ong.to_param, ong: invalid_attributes}, session: valid_session
+        @user = create(:usuario_aleatorio)
+        session[:id] = @user.id
+        ong = @user.ongs.create! valid_attributes
+        put :update, params: {id: ong.to_param, ong: invalid_attributes}, session: session
+        #ong = Ong.create! valid_attributes
+        #put :update, params: {id: ong.to_param, ong: invalid_attributes}, session: valid_session
         expect(response).to render_template("edit")
       end
     end
@@ -143,15 +182,24 @@ RSpec.describe OngsController, type: :controller do
 
   describe "DELETE #destroy" do
     it "destroys the requested ong" do
-      ong = Ong.create! valid_attributes
+      @user = create(:usuario_aleatorio)
+      session[:id] = @user.id
+      ong = @user.ongs.create! valid_attributes
+
+      #ong = Ong.create! valid_attributes
       expect {
-        delete :destroy, params: {id: ong.to_param}, session: valid_session
+        delete :destroy, params: {id: ong.to_param}, session: session
+        #delete :destroy, params: {id: ong.to_param}, session: valid_session
       }.to change(Ong, :count).by(-1)
     end
 
     it "redirects to the ongs list" do
-      ong = Ong.create! valid_attributes
-      delete :destroy, params: {id: ong.to_param}, session: valid_session
+      @user = create(:usuario_aleatorio)
+      session[:id] = @user.id
+      ong = @user.ongs.create! valid_attributes
+      delete :destroy, params: {id: ong.to_param}, session: session
+      #ong = Ong.create! valid_attributes
+      #delete :destroy, params: {id: ong.to_param}, session: valid_session
       expect(response).to redirect_to(ongs_url)
     end
   end

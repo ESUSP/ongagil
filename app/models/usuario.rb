@@ -1,5 +1,7 @@
 class Usuario < ApplicationRecord
   attr_accessor :old_password
+  has_many :ongs, dependent: :nullify 
+
   has_secure_password
 
   validates :email,
