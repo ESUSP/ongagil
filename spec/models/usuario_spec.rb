@@ -29,6 +29,11 @@ RSpec.describe 'Usuario', type: :model do
       expect(usr).to be_invalid
     end
 
+    it "é válido com e-mail correto" do
+      usr.email = "nome@dominio.xx"
+      expect(usr).to be_valid
+    end
+
     it "é inválido com e-mail em uso" do
       uteste = create(:usuario_valido) #salva usuaário com e-mail padrão
       uteste2 = build(:usuario_valido) #novo usuário com mesmos dados
@@ -41,14 +46,32 @@ RSpec.describe 'Usuario', type: :model do
       expect(usr).to be_invalid
     end
 
+    it "é válido com senha maior que 4 caracteres" do
+      usr.password = "12345"
+      usr.password_confirmation = "12345"
+      expect(usr).to be_valid
+    end
+
     it "é inválido sem confirmação de senha que confira" do
       usr.password_confirmation = "654321"
       expect(usr).to be_invalid
     end
 
+    it "é válido com confirmação de senha que confere" do
+      usr.password = "654321"
+      usr.password_confirmation = "654321"
+      expect(usr).to be_valid
+    end
+
     it "retorna usuário admin na pesquisa" do
       uteste = create(:usuario_admin)
       upes = Usuario.pesquisar({email: 'admin@admin.com'}).first
+      expect(upes).to eq(uteste)
+    end
+
+    it "retorna usuário admin quando pesquisado por Administrador" do  
+      uteste = create(:usuario_admin)
+      upes = Usuario.pesquisar({nome: 'Administrador', email: 'admin@admin.com'}).first
       expect(upes).to eq(uteste)
     end
 

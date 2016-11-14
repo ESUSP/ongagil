@@ -23,19 +23,25 @@ class UsuariosController < ApplicationController
   # PATCH /usuarios/:id
   def patch
     respond_to do |format|
-      #If changing password, check old password.
-      if (params[:usuario][:password].blank? || !@usuario.authenticate(params[:usuario][:old_password]))
-        @usuario.errors.add(:old_password, :invalid, message: "Senha antiga inválida")
+      if current_user.id != @usuario.id
+        @usuario.errors.add(:old_password, :invalid, message: "Usuário não possui permissão para alterar senha de outro usuário.")
         format.html { render :senha }
         format.json { render json: @usuario.errors, status: :unprocessable_entity }
       else
-        #Else update entity
-        if @usuario.update(usuario_params)
-          format.html { redirect_to @usuario, flash: {success: 'Senha alterada com sucesso.'}}
-          format.json { render :show, status: :ok, location: @usuario }
-        else
-          format.html { render :edit }
+        #If changing password, check old password.
+        if (params[:usuario][:password].blank? || !@usuario.authenticate(params[:usuario][:old_password]))
+          @usuario.errors.add(:old_password, :invalid, message: "Senha antiga inválida")
+          format.html { render :senha }
           format.json { render json: @usuario.errors, status: :unprocessable_entity }
+        else
+          #Else update entity
+          if @usuario.update(usuario_params)
+            format.html { redirect_to @usuario, flash: {success: 'Senha alterada com sucesso.'}}
+            format.json { render :show, status: :ok, location: @usuario }
+          else
+            format.html { render :edit }
+            format.json { render json: @usuario.errors, status: :unprocessable_entity }
+          end
         end
       end
     end
@@ -66,7 +72,6 @@ class UsuariosController < ApplicationController
   # POST /usuarios.json
   def create
     @usuario = Usuario.new(usuario_params)
-
     respond_to do |format|
       if @usuario.save
         format.html { redirect_to @usuario, flash: {success: 'Usuário registrado com sucesso.'} }

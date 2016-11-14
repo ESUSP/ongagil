@@ -45,16 +45,16 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.nome.split.first %><b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to 'Alterar Cadastro', current_user, method: :get %></li>
+                  <li><%= link_to 'Alterar Cadastro', edit_usuario_path(current_user), method: :get %></li>
                   <li><%= link_to 'Alterar Senha', usuarios_senha_url, method: :get %></li>
-                  <li><%= link_to 'Logout', logout_url, method: :delete %></li>
+                  <li><%= link_to 'Sair', logout_url, method: :delete %></li>
                   <li class="divider"></li>
                   <li class="dropdown-header">Administrador</li>
                   <li><%= link_to 'Listar Usuários', usuarios_url %></li>
                 </ul>
               </li>
             <% else %>
-              <li><a href='/login'>Log in</a></li>
+              <li><<%= link_to 'Entrar', login_url, method: :get %></li>
             <% end %>
           </ul>
         </div>

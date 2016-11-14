@@ -25,15 +25,15 @@
               <td><%= text_field_tag :email, params[:email], class: 'form-control' %></td>
               <td><%= text_field_tag :telefone, params[:telefone], class: 'form-control', type: 'tel' %></td>
               <td>
-                <button type="submit" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" name="submit"><i class="glyphicon glyphicon-search"></i> Pesquisar</button></td>
+                <button id="pesquisar" type="submit" class="btn btn-default" data-placement="bottom" name="submit"><i class="glyphicon glyphicon-search"></i> Pesquisar</button></td>
             </tr>
             <% @usuarios.each do |usuario| %>
               <tr>
                 <td><%= usuario.nome %></td>
                 <td><%= usuario.email %></td>
                 <td><%= usuario.telefone %></td>
-                <td><%= link_to raw('<span class="glyphicon glyphicon-search"></span>'), usuario, {class: 'btn btn-default', title: 'Consultar', 'data-toggle': 'tooltip', 'data-placement': 'bottom', 'role': 'button'} %>
-                <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span>'), edit_usuario_path(usuario), {class: 'btn btn-default', title: 'Alterar', 'data-toggle': 'tooltip', 'data-placement': 'bottom', 'role': 'button'} %> <%= link_to raw('<span class="glyphicon glyphicon-remove-sign"></span>'), usuario, {class: 'btn btn-default', title: 'Remover', 'data-toggle': 'tooltip', 'data-placement': 'bottom', 'role': 'button', method: :delete, data: { confirm: 'Tem certeza que deseja excluir o usuário?' }} %></td>
+                <td><%= link_to raw('<span class="glyphicon glyphicon-search"></span>'), usuario, {class: 'btn btn-default', title: 'Consultar',  'data-placement': 'bottom', 'role': 'button'} %>
+                  <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span>'), edit_usuario_path(usuario), {class: 'btn btn-default', title: 'Alterar',  'data-placement': 'bottom', 'role': 'button'} %> <%= link_to raw('<span class="glyphicon glyphicon-remove-sign"></span>'), usuario, {class: 'btn btn-default', title: 'Remover',  'data-placement': 'bottom', 'role': 'button', method: :delete, data: { confirm: 'Tem certeza que deseja excluir o usuário?' }} %></td>
               </tr>
             <% end %>
           </tbody>
@@ -52,12 +52,6 @@
       </div>
     </div>
     <script>
-      var ready = function ()
-          {
-            $("[role=button]").tooltip();
-          };
-      
-      
-            $(document).ready(ready);
-            $(document).on('page:load', ready);
+      $(document).ready(ready);
+                  $(document).on('page:load', ready);
     </script>

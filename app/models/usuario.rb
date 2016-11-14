@@ -1,6 +1,6 @@
 class Usuario < ApplicationRecord
   attr_accessor :old_password
-  has_many :ongs, dependent: :nullify 
+  has_many :ongs, dependent: :nullify
 
   has_secure_password
 
@@ -20,11 +20,15 @@ class Usuario < ApplicationRecord
     on: :create
 
   def self.pesquisar(phash)
+    #lowercase parameters
+    @nome = phash[:nome].nil? ? nil : phash[:nome].downcase
+    @email = phash[:email].nil? ? nil : phash[:email].downcase
+    @telefone = phash[:telefone].nil? ? nil : phash[:telefone].downcase
+
     if phash[:nome] || phash[:email] || phash[:telefone]
-      Usuario.all.where(['coalesce(nome,\'\') LIKE ? and coalesce(email,\'\') LIKE ? and coalesce(telefone,\'\') LIKE ?', "%#{phash[:nome]}%", "%#{phash[:email]}%", "%#{phash[:telefone]}%"])
+      Usuario.all.where(['coalesce(lower(nome),\'\') LIKE ? and coalesce(lower(email),\'\') LIKE ? and coalesce(telefone,\'\') LIKE ?', "%#{@nome}%", "%#{@email}%", "%#{@telefone}%"])
     else
       Usuario.all
     end
   end
-
 end

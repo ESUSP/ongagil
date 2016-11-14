@@ -11,7 +11,7 @@ Then Eu devo ver o fómulário registrar
 Scenario: Usuario Preenche Registrar-se
 When Eu acesso a pagina de registro
 And Eu preencho o formulário registrar com os seguintes atributos:
-	|usuario_email    		  		| jeanadam@gmail.com   	|
+	|usuario_email    		  		| jean@gmail.com     	|
 	|usuario_nome   		  		| Jean Adam Calixto 	|
 	|usuario_password    			| 12345					|
 	|usuario_password_confirmation 	| 12345			       	|

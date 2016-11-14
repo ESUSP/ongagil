@@ -32,9 +32,9 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'will_paginate', '~> 3.1.0'
 # Enable bootstrap renderer for will paginates
-gem 'will_paginate-bootstrap'
+gem 'will_paginate-bootstrap', '~> 1.0.1'
 # Enable text internationalization
-gem 'rails-i18n'
+gem 'rails-i18n', '~> 5.0.1'
 # Auto format html and ruby files
 gem 'htmlbeautifier'
 
@@ -56,15 +56,15 @@ group :development, :test do
   # Enable rake cucumber
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
-  gem 'database_cleaner'
+  gem 'database_cleaner', '~> 1.5'
 
   # generates models to test code -> seems better than using fixture models
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '~> 4.7'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console'
+  gem 'web-console' 
   gem 'listen', '~> 3.0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
