@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<b ALIGN=CENTER> <h1>Detalhes da Doação</h1> </b>
 
 <p>
   <strong>Data:</strong>
@@ -40,5 +40,12 @@
   <%= @doacao.observacao %>
 </p>
 
-<%= link_to 'Editar', edit_doacao_path(@doacao) %> |
-<%= link_to 'Voltar', doacaos_path %>
+<br> </br>
+
+<div class="col-sm-3">
+  <b> <%= link_to 'Editar', edit_doacao_path(@doacao), class: 'btn btn-default' %> | <%= link_to 'Voltar', doacaos_path, class: 'btn btn-default' %> <b> 
+</div>
+    
+<br> </br>
+  
+
