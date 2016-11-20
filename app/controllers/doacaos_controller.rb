@@ -4,7 +4,12 @@ class DoacaosController < ApplicationController
   # GET /doacaos
   # GET /doacaos.json
   def index
-    @doacaos = Doacao.all
+    #@doacaos = Doacao.all
+    if params[:search]
+      @doacaos = Doacao.paginate(:page => 1, :per_page => 10).search(params[:search])
+    else
+      @doacaos = Doacao.paginate(:page => 1, :per_page => 10)
+    end
   end
 
   # GET /doacaos/1

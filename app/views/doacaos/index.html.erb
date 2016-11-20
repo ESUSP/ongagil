@@ -1,41 +1,63 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Doacao -%>
 
-<h1>Doações</h1>
+<%= form_tag(doadors_path, :method => :get) do %>
+<%= text_field_tag 'search', nil, placeholder: "Descrição da Doação" %>
+<%= submit_tag "Buscar" %>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Data</th>
-      <th>Doador</th>
-      <th>Tipo</th>
-      <th>Valor</th>
-      <th>Pago</th>
-      <th>Forma</th>
-      <th>Descricao</th>
-      <th>Observacao</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @doacaos.each do |doacao| %>
-      <tr>
-        <td><%= doacao.data %></td>
-        <td><%= doacao.doador.nome %></td>
-        <td><%= doacao.tipo %></td>
-        <td><%= doacao.valor %></td>
-        <td><%= doacao.pago %></td>
-        <td><%= doacao.forma %></td>
-        <td><%= doacao.descricao %></td>
-        <td><%= doacao.observacao %></td>
-        <td><%= link_to 'Show', doacao %></td>
-        <td><%= link_to 'Edit', edit_doacao_path(doacao) %></td>
-        <td><%= link_to 'Destroy', doacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+  <div class="page-header">
+    <h1>
+      Doações
+    </h1>
+  </div>
 <br>
 
-<%= link_to 'Nova Doação', new_doacao_path %>
+  <div class="table-responsive">
+    <table id="tbldoacaos" class="table table-bor table-striped table-hover" cellspacing="0" width="100%">
+      <thead>
+         <tr>
+            <th>Data</th>
+            <th>Doador</th>
+            <th>Tipo</th>
+            <th>Valor</th>
+            <th>Pago ?</th>
+            <th>Forma de Pagamento</th>
+            <th>Descricao</th>
+            <th>Observacao</th>
+            <th colspan="3"></th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <% @doacaos.each do |doacao| %>
+          <tr>
+            <td><%= doacao.data %></td>
+            <td><%= doacao.doador.nome %></td>
+            <td><%= doacao.tipo %></td>
+            <td><%= doacao.valor %></td>
+            <td><%= doacao.pago %></td>
+            <td><%= doacao.forma %></td>
+            <td><%= doacao.descricao %></td>
+            <td><%= doacao.observacao %></td>
+            <td><%= link_to 'Mostrar', doacao, class: "btn btn-default" %></td>
+            <td><%= link_to 'Editar', edit_doacao_path(doacao),  class: "btn btn-warning" %></td>
+            <td><%= link_to 'Deletar', doacao,  class: "btn btn-danger", method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= will_paginate @doacaos %>
+
+<br>
+   <div class="col-md-12">
+      <span class="pull-right">
+        <%= link_to 'Nova Doação', new_doacao_path, class:"btn btn-success" %>  
+      </span> 
+    </div>
+
+<br>
+<br>
+<br>
+
