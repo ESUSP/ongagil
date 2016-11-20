@@ -4,4 +4,9 @@ class Doacao < ApplicationRecord
     validates :data, presence:true
     validates :tipo, presence:true
     validates :valor, presence:true
+    
+    def self.search(query)
+        where("descricao ilike ?", "%#{query}%")
+    end
+    
 end
