@@ -36,7 +36,7 @@
   <div class="field form-group">
     <%= f.label "Telefone", :class =>  'control-label col-sm-3' %>
     <div class="col-sm-7">
-      <%= f.text_field :telefone, required: true, placeholder: 'XX.XXX.XXX.XXX', :data => {:mask=> '99-9999-9999'} %>
+      <%= f.telephone_field :telefone, required: true, placeholder: 'XX.XXXX.XXXX', :maxlength => 10, :size => 40 %> 
     </div>
   </div>
   
