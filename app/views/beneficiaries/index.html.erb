@@ -2,6 +2,7 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
             <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.min.js"></script>
+          
             <script>
                 $('document').ready(function() {
                     $('#tblbeneficiaries').DataTable({
@@ -15,10 +16,13 @@
                     });
                 });
             </script>
+            
             <script>
                 // define as mascaras para os campos 
                 $('.mask_rg').mask('00.000.000-AA');
+                 $('.mask_cpf').mask('000.000.000-AA');
                 $('.mask_tel').mask('(00) 0000-0000');
+                $('.mask_cep').mask('(000.00-000');
             </script>
 
 <%- model_class = Beneficiary -%>

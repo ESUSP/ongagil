@@ -51,14 +51,14 @@
   <div class="field form-group">
     <%= f.label :cpf, :class => 'control-label col-sm-3'  %>
     <div class="col-sm-9">
-    <%= f.text_field :cpf, :size => 40, :class => 'form-control', placeholder: 'XXX.XXX.XXX.XXX', :data=> {:mask=> '999.999.999.9999'}, required: true%>
+    <%= f.text_field :cpf, :size => 40, :class => 'form-control mask_cpf', placeholder: 'XXX.XXX.XXX.XXX', :data=> {:mask=> '999.999.999-99'}, required: true%>
     </div>
   </div>
 
   <div class="field form-group">
     <%= f.label :telefone, :class => 'control-label col-sm-3'  %>
     <div class="col-sm-9">
-    <%= f.text_field :telefone, :size => 40, :class => 'form-control', placeholder: 'XX XXXX-XXXX', :data=> {:mask=> '99 9999-9999'}, required: true%>
+    <%= f.text_field :telefone, :size => 40, :class => 'form-control mask_tel', placeholder: 'XX XXXX-XXXX', :data=> {:mask=> '99 9999-9999'}, required: true%>
     </div>
   </div>
 
@@ -93,7 +93,7 @@
   <div class="field form-group">
     <%= f.label :cep, :class => 'control-label col-sm-3' %>
     <div class="col-sm-9">
-    <%= f.text_field :cep, :size => 40, :class => 'form-control', placeholder: 'XXXXX-XXX', :data=> {:mask=> '999-99-999'}  %>
+    <%= f.text_field :cep, :size => 40, :class => 'form-control mask_cep', placeholder: 'XXX.XX-XXX', :data=> {:mask=> '999.99-999'}  %>
     </div>
   </div>
 

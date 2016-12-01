@@ -27,4 +27,16 @@ end
 
 Then(/^[Ee]u devo ver erros$/) do
   expect(page).to have_content("erro")
+  
+  
+  
+When(/^Eu clico no alterar$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^[Ee]u devo ver botao alterar$/) do
+  expect(page).to have_content("erro")  
+  
+  
+  
 =end
