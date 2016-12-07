@@ -6,16 +6,9 @@
 #de forma a controlar os beneficiarios do sistema
 
 #Scenario: Gestor Acessa formulário
-#When Eu acesso a pagina beneficiarios
-#Then Eu devo ver um fomulário
-
-#Scenario: Gestor Seleciona registro
-#When Eu acesso a pagina beneficiarios
-#When Eu seleciono o registro a ser removido
-#Then Eu clico em Destroy.
-
-#Scenario: Remocao
-#When Eu seleciono o registro
-#When vejo o botao destroy
-#Then Eu clico em Destroy.
-
+#And Eu acesso a pagina beneficiarios
+#And Eu devo ver um fomulário
+#And Eu filtro a pagina por nome 
+#And Eu seleciono o registro a ser removido
+#And Eu clico em Destroy
+#Then Beneficiario removido

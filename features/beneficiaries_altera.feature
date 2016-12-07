@@ -6,16 +6,24 @@
 #de forma a atualizar os beneficiarios do sistema
 
 #Scenario: Gestor Acessa formulário
-#When Eu acesso a pagina beneficiarios
-#Then Eu devo ver um fomulário
+#And Eu acesso a pagina beneficiarios
+#And seleciono o registro a ser alterado
+#And Eu preencho o formulário com as alterações:
+#	|projeto    		  		| Projeto das criancas   	|
+#	|nome   		  	    	| Ligia Cassia M. C. Santos	|
+#	|dataNasc 		        	| 09/11/1992				|
+#	|estadoCivil            	| Solteira			       	|
+#	|rg    		  	         	| 49.122.363-8             	|
+#	|cpf  		  	        	| 411.819.548-37           	|
+#	|telefone    		     	| (11) 4328-9341		    |
+#	|endereco 	                | Rua das Flores			|
+#	|bairro    		  	    	| Penha                  	|
+#	|estado   		  	     	| SP                    	|
+#	|pais  		            	| Brasil				   	|
+#	|cep	                    | 036.09-110			    |
+#	|menor	                    | Nao		    	       	|
+#	|responsavel            	| 		                	|
+#And Eu clico no alterar
 
-#Scenario: Gestor Seleciona registro a ser alterado
-#When Eu acesso a pagina beneficiarios
-#When Eu seleciono o registro a ser alterado
-#Then Eu clico em Alterar.
 
-#Scenario: Alterar
-#When Eu seleciono o registro
-#When vejo o botao Alterar
-#Then Eu clico em Alterar.
 

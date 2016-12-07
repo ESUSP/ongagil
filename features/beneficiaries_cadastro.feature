@@ -11,7 +11,7 @@
 
 #Scenario: Gestor Preenche formulário
 #When Eu acesso a pagina beneficiarios
-#When Eu preencho:
+#And Eu preencho:
 #	|projeto    		  		| Projeto das criancas   	|
 #	|nome   		  	    	| Ligia Cassia M. C. Santos	|
 #	|dataNasc 		        	| 09/11/1992				|
@@ -27,9 +27,4 @@
 #	|menor	                    | Nao		    	       	|
 #	|responsavel            	| 		                	|
 #And Eu clico no cadastrar
-
-#Scenario: Beneficiario registrado
-#When Eu preencho formulario com dados do beneficiario
-#And Eu clico em salvar
-#Then Eu devo ver mensagem salvo com sucesso
 

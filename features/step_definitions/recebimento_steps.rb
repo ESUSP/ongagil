@@ -1,7 +1,6 @@
-
 =begin  
-When(/^[Ee]u acesso a pagina beneficiarios$/) do
-  visit new_beneficiary_path
+When(/^[Ee]u acesso a pagina recebimentos$/) do
+  visit new_recebimento_path
 end
 
 Then(/^[Ee]u devo ver um fomulário$/) do
