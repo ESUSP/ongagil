@@ -14,98 +14,98 @@
 
 <form class="user-form form-horizontal" role="form">
   <div class="field form-group">
-      <%= f.label :projeto, :class => 'control-label col-sm-3' %>
+      <%= f.label :"Projeto:", :class => 'control-label col-sm-3' %>
     <div class="col-sm-9">
       <%= f.text_field :projeto, :size => 20, :class => 'form-control'  , required: true %>
     </div>
   </div>
 
   <div class="field form-group">
-    <%= f.label :nome, :class => 'control-label col-sm-3' %>
+    <%= f.label :"Nome:", :class => 'control-label col-sm-3' %>
     <div class="col-sm-9">
     <%= f.text_field :nome, :size => 80, :class => 'form-control'  , required: true %>
     </div>
   </div>
 
   <div class="field form-group">
-    <%= f.label :dataNasc, :class => 'control-label col-sm-3' %>
+    <%= f.label :"Data de Nascimento:", :class => 'control-label col-sm-3' %>
     <div class="col-sm-9">
     <%= f.date_field :dataNasc, :size => 40, :class => 'form-control'   %>
     </div>
   </div>
 
   <div class="field form-group">
-    <%= f.label :estadoCivil, :class => 'control-label col-sm-3' %>
+    <%= f.label :"Estado civil:", :class => 'control-label col-sm-3' %>
     <div class="col-sm-9">
     <%= f.text_field :estadoCivil, :size => 40, :class => 'form-control'  %>
     </div>
   </div>
 
   <div class="field form-group">
-    <%= f.label :rg, :class => 'control-label col-sm-3' %>
+    <%= f.label :"RG:", :class => 'control-label col-sm-3' %>
     <div class="col-sm-9">
     <%= f.text_field :rg, :size => 40, :class => 'form-control mask_rg', placeholder: 'XX.XXX.XXX-X', :data=> {:mask=> '99.999.999-9'}, required: true  %>
     </div>
   </div>
 
   <div class="field form-group">
-    <%= f.label :cpf, :class => 'control-label col-sm-3'  %>
+    <%= f.label :"CPF:", :class => 'control-label col-sm-3'  %>
     <div class="col-sm-9">
     <%= f.text_field :cpf, :size => 40, :class => 'form-control mask_cpf', placeholder: 'XXX.XXX.XXX.XXX', :data=> {:mask=> '999.999.999-99'}, required: true%>
     </div>
   </div>
 
   <div class="field form-group">
-    <%= f.label :telefone, :class => 'control-label col-sm-3'  %>
+    <%= f.label :"Telefone:", :class => 'control-label col-sm-3'  %>
     <div class="col-sm-9">
     <%= f.text_field :telefone, :size => 40, :class => 'form-control mask_tel', placeholder: 'XX XXXX-XXXX', :data=> {:mask=> '99 9999-9999'}, required: true%>
     </div>
   </div>
 
   <div class="field form-group">
-    <%= f.label :endereco, :class => 'control-label col-sm-3' %>
+    <%= f.label :"Endereço:", :class => 'control-label col-sm-3' %>
     <div class="col-sm-9">
     <%= f.text_field :endereco, :size => 80, :class => 'form-control'   %>
     </div>
   </div>
 
   <div class="field form-group">
-    <%= f.label :bairro, :class => 'control-label col-sm-3'  %>
+    <%= f.label :"Bairro:", :class => 'control-label col-sm-3'  %>
     <div class="col-sm-9">
     <%= f.text_field :bairro, :size => 40, :class => 'form-control'   %>
     </div>
   </div>
 
   <div class="field form-group">
-    <%= f.label :estado, :class => 'control-label col-sm-3'  %>
+    <%= f.label :"Estado:", :class => 'control-label col-sm-3'  %>
     <div class="col-sm-9">
     <%= f.text_field :estado, :size => 10, :class => 'form-control'   %>
     </div>
   </div>
 
   <div class="field form-group">
-    <%= f.label :pais, :class => 'control-label col-sm-3'  %>
+    <%= f.label :"País:", :class => 'control-label col-sm-3'  %>
     <div class="col-sm-9">
     <%= f.text_field :pais, :size => 40, :class => 'form-control'   %>
     </div>
   </div>
 
   <div class="field form-group">
-    <%= f.label :cep, :class => 'control-label col-sm-3' %>
+    <%= f.label :"CEP:", :class => 'control-label col-sm-3' %>
     <div class="col-sm-9">
     <%= f.text_field :cep, :size => 40, :class => 'form-control mask_cep', placeholder: 'XXX.XX-XXX', :data=> {:mask=> '999.99-999'}  %>
     </div>
   </div>
 
   <div class="field form-group">
-    <%= f.label :menor, :class => 'control-label col-sm-3' %>
+    <%= f.label :"Menor:", :class => 'control-label col-sm-3' %>
     <div class="col-sm-9">
     <%= f.check_box :menor, checked: "checked", :class => 'form-control' %>
     </div>
   </div>
 
   <div class="field form-group">
-    <%= f.label :responsavel, :class => 'control-label col-sm-3' %>
+    <%= f.label :"Responsável:", :class => 'control-label col-sm-3' %>
     <div class="col-sm-9">
     <%= f.text_field :responsavel, :size => 80, :class => 'form-control'  %>
     </div>
